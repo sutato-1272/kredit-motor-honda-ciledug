@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-	<meta name="google-site-verification" content="jXg4IWWebWxb8BX8YB-Q8mCLMW4JAiT-RfkrlUjGhjA" />
+    <meta name="google-site-verification" content="jXg4IWWebWxb8BX8YB-Q8mCLMW4JAiT-RfkrlUjGhjA" />
 	
     <title>Kredit Motor Honda Ciledug Kebayoran | DP Termurah Prima Motor</title>
     <meta name="description" content="Katalog Brosur Digital Honda Prima Motor. Promo DP rendah dan cicilan ringan untuk area Ciledug, Cipulir, hingga Kebayoran. Ready stock All New Vario, PCX, dan Stylo!">
@@ -11,61 +11,88 @@
     <link rel="preload" as="image" href="img/pricelist-honda-beat-sporty-deluxe-smart-key-acc-terbaru-2026.webp">
 
     <style>
-        /* CSS RESET & OPTIMASI PAGESPEED */
+        /* CSS RESET & OPTIMASI PAGESPEED - ZERO BLOAT */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background-color: #f4f7f6; color: #2d3436; }
+        body { background-color: #f4f7f6; color: #2d3436; line-height: 1.6; }
         
-        .header { background: #d63031; color: #fff; padding: 20px 15px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .header h1 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .header span { background: #2d3436; font-size: 0.8rem; padding: 4px 12px; border-radius: 20px; display: inline-block; }
+        .header { background: #d63031; color: #fff; padding: 30px 15px; text-align: center; border-bottom: 5px solid #b71c1c; }
+        .header h1 { font-size: 24px; text-transform: uppercase; letter-spacing: 1px; }
+        .header p { font-size: 14px; opacity: 0.9; margin-top: 5px; }
 
-        .katalog-wrapper { position: relative; max-width: 1200px; margin: 0 auto; }
-        .nav-btn { display: none; position: absolute; top: 50%; transform: translateY(-50%); background: #2d3436; color: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 20px; font-weight: bold; cursor: pointer; z-index: 10; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; }
-        .nav-btn:hover { background: #d63031; }
-        .nav-btn.prev { left: 5px; }
-        .nav-btn.next { right: 5px; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
 
-        .katalog-container { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding: 20px 0; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
-        .katalog-item { scroll-snap-align: center; flex: 0 0 85%; margin: 0 7.5%; }
-        .katalog-item img { width: 100%; height: auto; aspect-ratio: 1 / 1; display: block; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 2px solid #ddd; background-color: #eaeaea; }
-        .katalog-container::-webkit-scrollbar { display: none; }
-
-        @media (min-width: 768px) {
-            .nav-btn { display: block; } 
-            .katalog-item { flex: 0 0 40%; margin: 0 2.5%; } 
-            .katalog-container { padding: 30px 50px; }
-            .katalog-container::-webkit-scrollbar { display: block; height: 12px; }
-            .katalog-container::-webkit-scrollbar-track { background: #e0e0e0; border-radius: 10px; margin: 0 60px; }
-            .katalog-container::-webkit-scrollbar-thumb { background: #d63031; border-radius: 10px; border: 2px solid #e0e0e0; }
+        /* KATALOG HORIZONTAL */
+        .katalog-wrapper { position: relative; margin-bottom: 40px; }
+        .katalog-container { 
+            display: flex; overflow-x: auto; scroll-behavior: smooth; 
+            gap: 15px; padding-bottom: 15px; scroll-snap-type: x mandatory;
         }
+        .katalog-container::-webkit-scrollbar { height: 8px; }
+        .katalog-container::-webkit-scrollbar-thumb { background: #d63031; border-radius: 10px; }
+        
+        .card { 
+            min-width: 85%; background: #fff; border-radius: 12px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); overflow: hidden; 
+            scroll-snap-align: center; border: 1px solid #eee;
+        }
+        .card img { width: 100%; height: auto; display: block; }
+        .card-info { padding: 15px; text-align: center; }
+        .card-info h3 { font-size: 18px; color: #d63031; }
 
-        /* KALKULATOR SECTION (BARU) */
-        .calc-wrap { background: #fff; margin: 15px auto; max-width: 800px; padding: 25px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .calc-wrap h2 { text-align: center; color: #d63031; font-size: 1.2rem; margin-bottom: 15px; }
-        .calc-form label { font-size: 0.9rem; font-weight: bold; color: #2d3436; display: block; margin-bottom: 5px; }
-        .calc-form select, .calc-form input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
-        .calc-result { display: none; background: #e8f5e9; border: 1px solid #25D366; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
-        .calc-result h4 { color: #2d3436; margin-bottom: 5px; font-size: 1rem; }
-        .calc-result p { font-size: 1.2rem; font-weight: bold; color: #128C7E; }
-        .calc-btn { width: 100%; background: #2d3436; color: #fff; padding: 15px; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-bottom: 15px; }
+        /* NAVIGATION BUTTONS DESKTOP */
+        .nav-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(214, 48, 49, 0.8); color: white; border: none;
+            padding: 15px; cursor: pointer; border-radius: 50%; display: none; z-index: 10;
+        }
+        @media (min-width: 768px) { .nav-btn { display: block; } .card { min-width: 45%; } }
+        .prev { left: -25px; } .next { right: -25px; }
 
-        /* CTA */
-        .cta-box { background: #fff; margin: 15px auto; max-width: 800px; padding: 25px 20px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .btn-wa { display: block; width: 100%; background: #128C7E; color: #fff; padding: 18px; font-size: 1.1rem; font-weight: 900; border-radius: 10px; text-decoration: none; animation: pulse 2s infinite; text-transform: uppercase; box-shadow: 0 4px 15px rgba(18, 140, 126, 0.3); }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        /* KALKULATOR SECTION */
+        .calc-section { 
+            background: #fff; padding: 25px; border-radius: 15px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); margin-top: 30px;
+            border-top: 4px solid #d63031;
+        }
+        .calc-section h2 { text-align: center; margin-bottom: 20px; font-size: 20px; color: #2d3436; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
+        select, input { 
+            width: 100%; padding: 12px; border: 2px solid #dfe6e9; 
+            border-radius: 8px; font-size: 16px; transition: 0.3s;
+        }
+        select:focus, input:focus { border-color: #d63031; outline: none; }
 
-        /* FAQ */
-        .faq-wrap { padding: 20px; background: #fff; margin: 15px auto; max-width: 800px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .faq-wrap h2 { text-align: center; font-size: 1.2rem; margin-bottom: 15px; color: #d63031; }
-        .faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .faq-item h3 { font-size: 0.95rem; color: #2d3436; margin-bottom: 5px; }
-        .faq-item p { font-size: 0.85rem; color: #636e72; line-height: 1.5; }
+        .btn-hitung { 
+            width: 100%; padding: 15px; background: #2d3436; color: #fff; 
+            border: none; border-radius: 8px; font-size: 16px; font-weight: bold; 
+            cursor: pointer; margin-top: 10px; transition: 0.3s;
+        }
+        .btn-hitung:hover { background: #000; }
 
-        /* FOOTER */
-        .footer { background: #2d3436; color: #dfe6e9; padding: 30px 20px; text-align: center; font-size: 0.85rem; margin-top: 20px; }
-        .footer a { color: #00cec9; text-decoration: none; font-weight: bold; }
-        .maps-facade { margin-top: 15px; }
-        .img-maps { width: 100%; max-width: 400px; height: auto; aspect-ratio: 16/9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: none; user-select: none; }
+        #result-box { 
+            margin-top: 20px; padding: 20px; background: #fff9f9; 
+            border: 2px dashed #d63031; border-radius: 10px; text-align: center; display: none; 
+        }
+        .result-label { font-size: 14px; color: #636e72; }
+        .result-value { font-size: 28px; font-weight: 900; color: #d63031; margin: 5px 0; }
+
+        /* CTA BUTTON */
+        .btn-wa { 
+            display: block; width: 100%; padding: 18px; background: #27ae60; 
+            color: #fff; text-align: center; text-decoration: none; border-radius: 8px; 
+            font-weight: bold; font-size: 18px; margin-top: 20px; 
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3); transition: 0.3s;
+        }
+        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(39, 174, 96, 0.4); }
+
+        footer { background: #2d3436; color: #fff; padding: 40px 20px; text-align: center; margin-top: 50px; }
+        .img-maps { width: 100%; max-width: 400px; border-radius: 10px; margin-top: 15px; filter: grayscale(1); }
+
+        /* FAQ STYLE (AEO V4) */
+        .faq-item { text-align: left; margin-top: 20px; border-bottom: 1px solid #444; padding-bottom: 10px; }
+        .faq-item h4 { color: #fab1a0; font-size: 16px; }
+        .faq-item p { font-size: 14px; color: #dfe6e9; margin-top: 5px; }
     </style>
 
     <script type="application/ld+json">
@@ -73,16 +100,41 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "AutoDealer",
-          "name": "Honda Prima Motor Ciledug",
-          "url": "https://kredit-motor-honda-ciledug-terbaru.vercel.app",
-          "telephone": "+6285283212205",
-          "hasMap": "https://maps.app.goo.gl/sf5ZPDGFPgS8cKsPA",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Jalan Raya Ciledug",
-            "addressLocality": "Tangerang Selatan dan Jakarta Selatan",
-            "addressCountry": "ID"
+          "@type": "Service",
+          "name": "Kredit Motor Honda Ciledug Prima Motor",
+          "description": "Layanan kredit motor Honda resmi area Jalur Sutra Ciledug hingga Kebayoran Lama. DP termurah, proses 1 hari ACC, dan syarat KTP daerah dibantu.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Honda Prima Motor",
+            "image": "https://kredit-motor-honda-ciledug-terbaru.vercel.app/img/logo.png",
+            "telephone": "+6285283212205",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Jalan Raya Ciledug",
+              "addressLocality": "Tangerang",
+              "addressRegion": "Banten",
+              "addressCountry": "ID"
+            }
+          },
+          "areaServed": [
+            {"@type": "City", "name": "Ciledug"},
+            {"@type": "City", "name": "Karang Tengah"},
+            {"@type": "City", "name": "Larangan"},
+            {"@type": "City", "name": "Kreo"},
+            {"@type": "City", "name": "Petukangan"},
+            {"@type": "City", "name": "Cipulir"},
+            {"@type": "City", "name": "Kebayoran Lama"},
+            {"@type": "City", "name": "Kebayoran Baru"}
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Katalog Honda 2026",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kredit Honda Vario 160" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kredit Honda PCX 160" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kredit Honda Stylo 160" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kredit Honda Beat Deluxe" } }
+            ]
           }
         },
         {
@@ -90,10 +142,18 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Berapa DP termurah motor Honda di area Ciledug?",
+              "name": "Berapa DP paling murah untuk kredit motor Honda di Ciledug?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "DP termurah untuk tipe Beat dan Genio di area Ciledug mulai dari Rp 1 Jutaan sesuai pricelist terbaru 2026."
+                "text": "Kami menyediakan promo DP mulai dari 500 ribu hingga 1 jutaan untuk tipe tertentu seperti Honda Beat. Hubungi kami untuk rincian angsuran terbaru."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah melayani kredit motor Honda untuk KTP luar daerah?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ya, kami bisa membantu proses kredit bagi Anda yang memiliki KTP daerah namun berdomisili atau bekerja di area Ciledug, Tangerang, dan Jakarta."
               }
             }
           ]
@@ -105,97 +165,118 @@
 <body>
 
 <header class="header">
-    <h1>Katalog Honda Digital</h1>
-    <span>👈 Geser Layar Untuk Cek Brosur 👉</span>
+    <h1>Kredit Motor Honda Ciledug</h1>
+    <p>Dealer Resmi Prima Motor - Jalur Sutra Ciledug s/d Kebayoran</p>
 </header>
 
-<main>
+<div class="container">
+    
     <div class="katalog-wrapper">
-        <button class="nav-btn prev" onclick="scrollKatalog(-1)" aria-label="Gambar Sebelumnya">❮</button>
-        
+        <button class="nav-btn prev" onclick="scrollKatalog(-1)">&#10094;</button>
         <div class="katalog-container" id="katalog">
-            <div class="katalog-item"><img src="img/pricelist-honda-beat-sporty-deluxe-smart-key-acc-terbaru-2026.webp" alt="Pricelist Honda Beat Sporty Deluxe Ciledug" width="1000" height="1000" fetchpriority="high"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-new-vario-125-cbs-terbaru-2026.webp" alt="Pricelist Honda Vario 125 Ciledug" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/harga-kredit-honda-vario-160-cbs-sp-ciledug.webp" alt="Harga Kredit Honda Vario 160 CBS SP Ciledug" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/promo-dp-murah-new-scoopy-prestige-ciledug-kebayoran-lama.webp" alt="Promo DP Murah Scoopy Prestige Kebayoran" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-new-scoppy-energetic-terbaru-2026.webp" alt="Pricelist Honda Scoopy Energetic Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/promo-dp-murah-honda-vario-160-abs-acc-ciledug-kebayoran-lama.webp" alt="Promo Honda Vario 160 ABS Ciledug" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-stylo-160-abs-terbaru-2026.webp" alt="Pricelist Honda Stylo 160 ABS Ciledug" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-new-beat-sporty-cbs-terbaru-2026.webp" alt="Pricelist Honda Beat Sporty CBS Ciledug" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-pcx-160-abs-terbaru-2026.webp" alt="Pricelist Honda PCX 160 ABS Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-new-vario-125-160-terbaru-2026.webp" alt="Pricelist New Vario 125 160 Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-pcx-160-abs-acc-terbaru-2026.webp" alt="Pricelist Honda PCX 160 ABS ACC Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-adv-160-cbs-terbaru-2026.webp" alt="Pricelist Honda ADV 160 CBS Ciledug" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-genio-cbs-iss-terbaru-2026.webp" alt="Pricelist Honda Genio CBS ISS Ciledug" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-beat-street-acc-terbaru-2026.webp" alt="Pricelist Honda Beat Street Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-adv-160-adv-acc-terbaru-2026.webp" alt="Pricelist Honda ADV 160 Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-new-vario-125-abs-acc-terbaru-2026.webp" alt="Pricelist New Vario 125 ABS Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-adv-160-abs-roadsync-terbaru-2026.webp" alt="Pricelist Honda ADV 160 Roadsync Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-stylo-160-cbs-terbaru-2026.webp" alt="Pricelist Honda Stylo 160 CBS Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-new-vario-125-steet-acc-terbaru-2026.webp" alt="Pricelist Vario 125 Street ACC Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-genio-cbs-bk-terbaru-2026.webp" alt="Pricelist Honda Genio CBS Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-pcx-160-cbs-terbaru-2026.webp" alt="Pricelist Honda PCX 160 CBS Terbaru" width="1000" height="1000" loading="lazy"></div>
-            <div class="katalog-item"><img src="img/pricelist-honda-beat-sporty-terbaru-2026.webp" alt="Pricelist Honda Beat Sporty 2026" width="1000" height="1000" loading="lazy"></div>
+            <div class="card">
+                <img src="img/pricelist-honda-beat-sporty-deluxe-smart-key-acc-terbaru-2026.webp" alt="Pricelist Honda Beat Ciledug Kebayoran" loading="lazy">
+                <div class="card-info">
+                    <h3>All New Honda Beat</h3>
+                    <p>DP Mulai 1 Jutaan</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/pricelist-honda-vario-125-cbs-iss-sp-terbaru-2026.webp" alt="Kredit Honda Vario 125 Ciledug" loading="lazy">
+                <div class="card-info">
+                    <h3>Honda Vario 125</h3>
+                    <p>Ready Stock All Type</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/pricelist-honda-vario-160-cbs-abs-terbaru-2026.webp" alt="Promo Vario 160 Ciledug Prima Motor" loading="lazy">
+                <div class="card-info">
+                    <h3>Honda Vario 160</h3>
+                    <p>Mesin Powerfull eSP+</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/pricelist-honda-stylo-160-cbs-abs-terbaru-2026.webp" alt="Kredit Honda Stylo Ciledug Kebayoran" loading="lazy">
+                <div class="card-info">
+                    <h3>Honda Stylo 160</h3>
+                    <p>Fashionable & Klasik</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/pricelist-honda-pcx-160-cbs-abs-terbaru-2026.webp" alt="Harga Honda PCX Ciledug Terbaru" loading="lazy">
+                <div class="card-info">
+                    <h3>Honda PCX 160</h3>
+                    <p>Matik Besar Berkelas</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/pricelist-honda-adv-160-cbs-abs-terbaru-2026.webp" alt="Kredit Honda ADV 160 Ciledug" loading="lazy">
+                <div class="card-info">
+                    <h3>Honda ADV 160</h3>
+                    <p>Explorasi Tanpa Batas</p>
+                </div>
+            </div>
         </div>
-        <button class="nav-btn next" onclick="scrollKatalog(1)" aria-label="Gambar Selanjutnya">❯</button>
+        <button class="nav-btn next" onclick="scrollKatalog(1)">&#10095;</button>
     </div>
 
-    <div class="calc-wrap">
-        <h2>Kalkulator Estimasi Cicilan</h2>
-        <div class="calc-form">
-            <label for="motor">Pilih Estimasi Harga Motor:</label>
+    <div class="calc-section">
+        <h2>Simulasi Cicilan Pintar</h2>
+        <div class="form-group">
+            <label>Pilih Unit Motor:</label>
             <select id="motor">
-                <option value="20000000">Tipe Beat / Genio (Mulai Rp 20 Juta)</option>
-                <option value="24000000">Tipe Scoopy (Mulai Rp 24 Juta)</option>
-                <option value="28000000">Tipe Vario 125/160 (Mulai Rp 28 Juta)</option>
-                <option value="33000000">Tipe Stylo 160 (Mulai Rp 33 Juta)</option>
-                <option value="38000000">Tipe PCX / ADV (Mulai Rp 38 Juta)</option>
+                <option value="19500000">Honda Beat Sporty</option>
+                <option value="23500000">Honda Vario 125</option>
+                <option value="28000000">Honda Stylo 160</option>
+                <option value="30500000">Honda Vario 160</option>
+                <option value="33500000">Honda PCX 160</option>
+                <option value="37000000">Honda ADV 160</option>
             </select>
-
-            <label for="dp">Rencana Uang Muka (DP):</label>
-            <input type="number" id="dp" placeholder="Contoh: 3000000" value="3000000">
-
-            <label for="tenor">Jangka Waktu (Bulan):</label>
+        </div>
+        <div class="form-group">
+            <label>Rencana DP (Rupiah):</label>
+            <input type="number" id="dp" placeholder="Contoh: 2000000" min="500000">
+        </div>
+        <div class="form-group">
+            <label>Tenor (Bulan):</label>
             <select id="tenor">
                 <option value="11">11 Bulan</option>
                 <option value="17">17 Bulan</option>
                 <option value="23">23 Bulan</option>
-                <option value="35" selected>35 Bulan</option>
+                <option value="29">29 Bulan</option>
+                <option value="35">35 Bulan</option>
             </select>
+        </div>
+        <button class="btn-hitung" onclick="hitungEstimasi()">HITUNG ESTIMASI SEKARANG</button>
 
-            <button class="calc-btn" onclick="hitungEstimasi()">HITUNG ESTIMASI</button>
+        <div id="result-box">
+            <p class="result-label">Estimasi Cicilan Anda:</p>
+            <p class="result-value" id="angka-cicilan">Rp 0</p>
+            <p style="font-size: 12px; color: #b2bec3;">*Hasil di atas adalah simulasi sementara.</p>
         </div>
 
-        <div class="calc-result" id="result-box">
-            <h4>Estimasi Cicilan Per Bulan:</h4>
-            <p id="angka-cicilan">Rp 0</p>
-            <span style="font-size: 0.8rem; color: #636e72;">*Ini hanya simulasi kisaran dasar. Cek brosur di atas untuk angka akurat subsidi dealer.</span>
+        <a href="https://wa.me/6285283212205" class="btn-wa">KONSULTASI VIA WHATSAPP</a>
+    </div>
+
+</div>
+
+<footer>
+    <h3>Honda Prima Motor Ciledug</h3>
+    <p>Melayani Jalur Sutra: Karang Tengah - Larangan - Kreo - Petukangan - Cipulir - Kebayoran</p>
+    
+    <div style="max-width: 600px; margin: 30px auto; border-top: 1px solid #444; padding-top: 20px;">
+        <div class="faq-item">
+            <h4>Berapa DP paling murah di Ciledug?</h4>
+            <p>Tersedia promo DP mulai 500 ribu - 1 jutaan untuk tipe Beat & Vario. Cek stok sekarang!</p>
+        </div>
+        <div class="faq-item">
+            <h4>Apakah KTP daerah bisa bantu kredit?</h4>
+            <p>Bisa! Kami spesialis membantu warga domisili Ciledug/Kebayoran yang memiliki KTP luar kota agar tetap bisa memiliki motor Honda.</p>
         </div>
     </div>
 
-    <div class="cta-box">
-        <h3>Lock Promo KTP Ciledug & Kebayoran!</h3>
-        <p style="font-size: 0.9rem; color: #636e72; margin-bottom: 20px;">Data dijemput gratis. Proses cepat dibantu sampai ACC.</p>
-        <a href="https://wa.me/6285283212205?text=Halo%20Mas,%20saya%20sudah%20cek%20brosur%20digital.%20Saya%20minat%20kredit%20motor%20Honda..." class="btn-wa">KONSULTASI GRATIS VIA WA</a>
-    </div>
-
-    <section class="faq-wrap">
-        <h2>Pertanyaan Seputar Kredit</h2>
-        <div class="faq-item">
-            <h3>Berapa lama proses kredit motor Honda di Ciledug?</h3>
-            <p>Proses cepat hanya 1-2 hari kerja. Data dijemput langsung ke rumah area Ciledug, Petukangan, dan Kebayoran tanpa biaya tambahan.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Apakah angsuran sudah termasuk asuransi?</h3>
-            <p>Tentu. Seluruh unit yang dikreditkan melalui jaringan kami sudah dicover asuransi kehilangan (TLO) selama masa tenor.</p>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <p>Official Digital Strategy Partner:<br> <a href="https://ciledugpromo.biz.id" target="_blank">CiledugPromo.biz.id</a></p>
-    <div class="maps-facade">
-        <img src="img/peta-lokasi-honda-ciledug.webp" alt="Peta Lokasi Honda Ciledug" width="400" height="225" class="img-maps" loading="lazy">
+    <div>
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=-6.2300,106.7200&zoom=14&size=400x225&key=YOUR_API_KEY" alt="Lokasi Dealer Honda Ciledug" width="400" height="225" class="img-maps" loading="lazy">
     </div>
     <p style="margin-top: 20px; color: #b2bec3;">© 2026 Honda Prima Motor. All Rights Reserved.</p>
 </footer>
@@ -208,27 +289,45 @@
         container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
 
-    /* SCRIPT KALKULATOR PINTAR */
+    /* SCRIPT KALKULATOR PINTAR LEADS (V4) - MASTER SUTATO VERSION */
     function hitungEstimasi() {
-        const otr = parseFloat(document.getElementById('motor').value);
-        const dp = parseFloat(document.getElementById('dp').value);
+        const motorSelect = document.getElementById('motor');
+        const namaMotor = motorSelect.options[motorSelect.selectedIndex].text;
+        const otr = parseFloat(motorSelect.value);
+        const dpInput = document.getElementById('dp').value;
+        const dp = parseFloat(dpInput);
         const tenor = parseInt(document.getElementById('tenor').value);
         
-        if (dp >= otr) {
-            alert("DP tidak boleh lebih besar dari harga motor!");
+        if (!dpInput || dp < 500000) {
+            alert("Silakan masukkan nominal DP minimal Rp 500.000");
             return;
         }
 
+        if (dp >= otr) {
+            alert("Maaf, DP tidak boleh lebih besar dari harga motor!");
+            return;
+        }
+
+        // Logika Hitung Sederhana (Vanilla JS)
         const pokokHutang = otr - dp;
-        const bungaFlat = 0.02; // Asumsi bunga flat 2% per bulan
+        const bungaFlat = 0.022; // Estimasi bunga flat
         const totalBunga = pokokHutang * bungaFlat * tenor;
         const totalHutang = pokokHutang + totalBunga;
         const cicilan = totalHutang / tenor;
 
         const formatRupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(cicilan);
+        const formatDP = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dp);
         
         document.getElementById('angka-cicilan').innerText = formatRupiah;
         document.getElementById('result-box').style.display = 'block';
+
+        // OTOMATISASI LINK WHATSAPP DENGAN DATA HITUNGAN (LEADS MAGNET)
+        const waLink = document.querySelector('.btn-wa');
+        const waText = `Halo Jenderal, saya sudah hitung simulasi di website. Saya minat promo Honda ini:\n\n🏍️ *Tipe:* ${namaMotor}\n💰 *Rencana DP:* ${formatDP}\n⏱️ *Tenor:* ${tenor} Bulan\n📝 *Hasil Cicilan:* ${formatRupiah}/bulan\n\nMohon bantu cek harga diskon aslinya dan info stoknya ya!`;
+        
+        waLink.href = `https://wa.me/6285283212205?text=${encodeURIComponent(waText)}`;
+        waLink.innerText = "KLAIM DISKON HARGA ASLI (WA)";
+        waLink.style.background = "#e67e22"; // Berubah warna untuk eye-catching
     }
 </script>
 
