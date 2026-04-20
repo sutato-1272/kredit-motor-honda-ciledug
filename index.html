@@ -41,7 +41,7 @@
 
         /* KALKULATOR & FORM SECTION */
         .calc-wrap { background: #fff; margin: 15px auto; max-width: 800px; padding: 25px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .calc-wrap h2 { text-align: center; color: #d63031; font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; }
+        .calc-wrap h2 { text-align: center; color: #d63031; font-size: 1.2rem; margin-bottom: 5px; text-transform: uppercase; }
         
         .section-title { background: #f4f7f6; padding: 8px 12px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; margin: 15px 0 10px; color: #d63031; border-left: 4px solid #d63031; }
         
@@ -49,13 +49,19 @@
         select, input, textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; background: #fff; }
         textarea { height: 80px; resize: none; }
 
-        .ktp-notice { background: #fffde7; border: 1px dashed #fbc02d; padding: 10px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 15px; color: #5d4037; }
+        /* MODIFIKASI: KTP NOTICE LEBIH TEGAS */
+        .ktp-notice { background: #fff9c4; border: 2px solid #fbc02d; padding: 12px; border-radius: 8px; font-size: 0.85rem; margin-bottom: 20px; color: #5d4037; text-align: center; }
 
-        .calc-result { display: none; background: #e8f5e9; border: 1px solid #25D366; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
+        /* MODIFIKASI: ANIMASI FADE-IN HASIL CICILAN */
+        .calc-result { display: none; background: #e8f5e9; border: 1px solid #25D366; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 15px; animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        
         .calc-result h4 { color: #2d3436; margin-bottom: 5px; font-size: 1rem; }
         .calc-result p { font-size: 1.2rem; font-weight: bold; color: #128C7E; }
 
-        .calc-btn { width: 100%; background: #2d3436; color: #fff; padding: 15px; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin: 10px 0; }
+        .calc-btn { width: 100%; background: #2d3436; color: #fff; padding: 15px; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin: 10px 0; transition: background 0.3s; }
+        .calc-btn:hover { background: #d63031; }
+        
         .btn-wa { display: block; width: 100%; background: #128C7E; color: #fff; padding: 18px; font-size: 1.1rem; font-weight: 900; border-radius: 10px; text-decoration: none; animation: pulse 2s infinite; text-align: center; text-transform: uppercase; box-shadow: 0 4px 15px rgba(18, 140, 126, 0.3); }
         
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
@@ -137,9 +143,10 @@
 
     <div class="calc-wrap">
         <h2>Form Pengajuan Kredit Honda</h2>
+        <p style="text-align: center; font-size: 0.8rem; color: #636e72; margin-bottom: 15px;">⏱️ Hanya butuh 2 menit untuk melengkapi data pengajuan.</p>
         
         <div class="ktp-notice">
-            📢 <strong>INFO PENTING KTP:</strong> Hanya melayani KTP wilayah <b>Tangerang, DKI Jakarta, Bekasi, dan Depok</b>.
+            📌 <strong>INFO PENTING KTP:</strong> Hanya melayani KTP wilayah <b>Tangerang, DKI Jakarta, Bekasi, dan Depok</b>.
         </div>
 
         <div class="calc-form">
@@ -270,7 +277,6 @@
         container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
 
-    /* GLOBAL VAR UNTUK HASIL CICILAN */
     let globalCicilan = "0";
 
     function hitungEstimasi() {
@@ -284,7 +290,7 @@
         }
 
         const pokokHutang = otr - dp;
-        const bungaFlat = 0.022; // Asumsi bunga flat 2.2%
+        const bungaFlat = 0.022; 
         const totalBunga = pokokHutang * bungaFlat * tenor;
         const totalHutang = pokokHutang + totalBunga;
         const cicilan = totalHutang / tenor;
@@ -295,7 +301,6 @@
         document.getElementById('angka-cicilan').innerText = formatRupiah + "/bln";
         document.getElementById('result-box').style.display = 'block';
         
-        // Scroll otomatis ke hasil
         document.getElementById('result-box').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
@@ -306,7 +311,6 @@
         const dpVal = new Intl.NumberFormat('id-ID').format(document.getElementById('dp').value);
         const tenorVal = document.getElementById('tenor').value;
 
-        // Data Pemohon
         const nama = document.getElementById('nama_pemohon').value;
         const stnk = document.getElementById('nama_stnk').value;
         const alamat = document.getElementById('alamat_lengkap').value;
@@ -316,14 +320,12 @@
         const pendidikan = document.getElementById('pendidikan').value;
         const ibu = document.getElementById('nama_ibu').value;
 
-        // Data Kerja
         const k_nama = document.getElementById('kerja_nama').value;
         const k_sebagai = document.getElementById('kerja_sebagai').value;
         const k_alamat = document.getElementById('kerja_alamat').value;
         const k_lama = document.getElementById('kerja_lama').value;
         const k_pendapatan = document.getElementById('kerja_pendapatan').value;
 
-        // Emcall
         const e_nama = document.getElementById('emcall_nama').value;
         const e_tlp = document.getElementById('emcall_tlp').value;
 
