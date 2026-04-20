@@ -13,7 +13,7 @@
     <style>
         /* CSS RESET & OPTIMASI PAGESPEED */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background-color: #f4f7f6; color: #2d3436; }
+        body { background-color: #f4f7f6; color: #2d3436; line-height: 1.4; }
         
         .header { background: #d63031; color: #fff; padding: 20px 15px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .header h1 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
@@ -39,33 +39,37 @@
             .katalog-container::-webkit-scrollbar-thumb { background: #d63031; border-radius: 10px; border: 2px solid #e0e0e0; }
         }
 
-        /* KALKULATOR SECTION */
+        /* KALKULATOR & FORM SECTION */
         .calc-wrap { background: #fff; margin: 15px auto; max-width: 800px; padding: 25px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .calc-wrap h2 { text-align: center; color: #d63031; font-size: 1.2rem; margin-bottom: 15px; }
-        .calc-form label { font-size: 0.9rem; font-weight: bold; color: #2d3436; display: block; margin-bottom: 5px; }
-        .calc-form select, .calc-form input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        .calc-wrap h2 { text-align: center; color: #d63031; font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; }
+        
+        .section-title { background: #f4f7f6; padding: 8px 12px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; margin: 15px 0 10px; color: #d63031; border-left: 4px solid #d63031; }
+        
+        label { font-size: 0.85rem; font-weight: bold; color: #2d3436; display: block; margin-bottom: 5px; }
+        select, input, textarea { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; background: #fff; }
+        textarea { height: 80px; resize: none; }
+
+        .ktp-notice { background: #fffde7; border: 1px dashed #fbc02d; padding: 10px; border-radius: 8px; font-size: 0.8rem; margin-bottom: 15px; color: #5d4037; }
+
         .calc-result { display: none; background: #e8f5e9; border: 1px solid #25D366; padding: 15px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
         .calc-result h4 { color: #2d3436; margin-bottom: 5px; font-size: 1rem; }
         .calc-result p { font-size: 1.2rem; font-weight: bold; color: #128C7E; }
-        .calc-btn { width: 100%; background: #2d3436; color: #fff; padding: 15px; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-bottom: 15px; }
 
-        /* CTA */
-        .cta-box { background: #fff; margin: 15px auto; max-width: 800px; padding: 25px 20px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .btn-wa { display: block; width: 100%; background: #128C7E; color: #fff; padding: 18px; font-size: 1.1rem; font-weight: 900; border-radius: 10px; text-decoration: none; animation: pulse 2s infinite; text-transform: uppercase; box-shadow: 0 4px 15px rgba(18, 140, 126, 0.3); transition: 0.3s; }
+        .calc-btn { width: 100%; background: #2d3436; color: #fff; padding: 15px; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin: 10px 0; }
+        .btn-wa { display: block; width: 100%; background: #128C7E; color: #fff; padding: 18px; font-size: 1.1rem; font-weight: 900; border-radius: 10px; text-decoration: none; animation: pulse 2s infinite; text-align: center; text-transform: uppercase; box-shadow: 0 4px 15px rgba(18, 140, 126, 0.3); }
+        
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
 
-        /* FAQ */
+        /* FOOTER & OTHERS */
         .faq-wrap { padding: 20px; background: #fff; margin: 15px auto; max-width: 800px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .faq-wrap h2 { text-align: center; font-size: 1.2rem; margin-bottom: 15px; color: #d63031; }
         .faq-item { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         .faq-item h3 { font-size: 0.95rem; color: #2d3436; margin-bottom: 5px; }
         .faq-item p { font-size: 0.85rem; color: #636e72; line-height: 1.5; }
 
-        /* FOOTER */
         .footer { background: #2d3436; color: #dfe6e9; padding: 30px 20px; text-align: center; font-size: 0.85rem; margin-top: 20px; }
         .footer a { color: #00cec9; text-decoration: none; font-weight: bold; }
-        .maps-facade { margin-top: 15px; }
-        .img-maps { width: 100%; max-width: 400px; height: auto; aspect-ratio: 16/9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: none; user-select: none; }
+        .img-maps { width: 100%; max-width: 400px; height: auto; aspect-ratio: 16/9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); pointer-events: none; user-select: none; margin-top: 15px;}
     </style>
 
     <script type="application/ld+json">
@@ -88,38 +92,7 @@
               "addressLocality": "Tangerang Selatan dan Jakarta Selatan",
               "addressCountry": "ID"
             }
-          },
-          "areaServed": [
-            {"@type": "City", "name": "Ciledug"},
-            {"@type": "City", "name": "Karang Tengah"},
-            {"@type": "City", "name": "Larangan"},
-            {"@type": "City", "name": "Kreo"},
-            {"@type": "City", "name": "Petukangan"},
-            {"@type": "City", "name": "Cipulir"},
-            {"@type": "City", "name": "Kebayoran Lama"},
-            {"@type": "City", "name": "Kebayoran Baru"}
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Berapa lama proses kredit motor Honda di Ciledug?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Proses cepat hanya 1-2 hari kerja. Data dijemput langsung ke rumah area Ciledug, Petukangan, dan Kebayoran tanpa biaya tambahan."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Apakah angsuran sudah termasuk asuransi?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Tentu. Seluruh unit yang dikreditkan melalui jaringan kami sudah dicover asuransi kehilangan (TLO) selama masa tenor."
-              }
-            }
-          ]
+          }
         }
       ]
     }
@@ -135,7 +108,6 @@
 <main>
     <div class="katalog-wrapper">
         <button class="nav-btn prev" onclick="scrollKatalog(-1)" aria-label="Gambar Sebelumnya">❮</button>
-        
         <div class="katalog-container" id="katalog">
             <div class="katalog-item"><img src="img/pricelist-honda-beat-sporty-deluxe-smart-key-acc-terbaru-2026.webp" alt="Pricelist Honda Beat Sporty Deluxe Ciledug" width="1000" height="1000" fetchpriority="high"></div>
             <div class="katalog-item"><img src="img/pricelist-honda-new-vario-125-cbs-terbaru-2026.webp" alt="Pricelist Honda Vario 125 Ciledug" width="1000" height="1000" loading="lazy"></div>
@@ -164,53 +136,121 @@
     </div>
 
     <div class="calc-wrap">
-        <h2>Kalkulator Estimasi Cicilan</h2>
+        <h2>Form Pengajuan Kredit Honda</h2>
+        
+        <div class="ktp-notice">
+            📢 <strong>INFO PENTING KTP:</strong> Hanya melayani KTP wilayah <b>Tangerang, DKI Jakarta, Bekasi, dan Depok</b>.
+        </div>
+
         <div class="calc-form">
-            <label for="motor">Pilih Estimasi Harga Motor:</label>
+            <div class="section-title">1. Pilih Unit & Simulasi</div>
+            <label for="motor">Tipe Motor:</label>
             <select id="motor">
-                <option value="20000000">Tipe Beat / Genio (Mulai Rp 20 Juta)</option>
-                <option value="24000000">Tipe Scoopy (Mulai Rp 24 Juta)</option>
-                <option value="28000000">Tipe Vario 125/160 (Mulai Rp 28 Juta)</option>
-                <option value="33000000">Tipe Stylo 160 (Mulai Rp 33 Juta)</option>
-                <option value="38000000">Tipe PCX / ADV (Mulai Rp 38 Juta)</option>
+                <option value="19337000">Beat Sporty CBS (OTR 19.337.000)</option>
+                <option value="21162000">Beat Sporty Deluxe/Smartkey (OTR 21.162.000)</option>
+                <option value="21052000">Genio CBS ISS (OTR 21.052.000)</option>
+                <option value="24602000">Scoopy Prestige/Stylish (OTR 24.602.000)</option>
+                <option value="25300000">Vario 125 CBS (OTR 25.300.000)</option>
+                <option value="27010000">Vario 125 CBS ISS (OTR 27.010.000)</option>
+                <option value="28614000">Vario 160 CBS (OTR 28.614.000)</option>
+                <option value="32363500">Vario 160 ABS (OTR 32.363.500)</option>
+                <option value="33480000">Stylo 160 ABS (OTR 33.480.000)</option>
+                <option value="43173000">PCX 160 ABS RoadSync (OTR 43.173.000)</option>
+                <option value="37772000">ADV 160 CBS (OTR 37.772.000)</option>
             </select>
 
             <label for="dp">Rencana Uang Muka (DP):</label>
-            <input type="number" id="dp" placeholder="Contoh: 3000000" value="3000000">
+            <input type="number" id="dp" placeholder="Contoh: 2500000" value="2500000">
 
             <label for="tenor">Jangka Waktu (Bulan):</label>
             <select id="tenor">
                 <option value="11">11 Bulan</option>
                 <option value="17">17 Bulan</option>
                 <option value="23">23 Bulan</option>
+                <option value="27">27 Bulan</option>
+                <option value="29">29 Bulan</option>
+                <option value="33">33 Bulan</option>
                 <option value="35" selected>35 Bulan</option>
             </select>
 
-            <button class="calc-btn" onclick="hitungEstimasi()">HITUNG ESTIMASI</button>
-        </div>
+            <button class="calc-btn" onclick="hitungEstimasi()">CEK ESTIMASI CICILAN</button>
 
-        <div class="calc-result" id="result-box">
-            <h4>Estimasi Cicilan Per Bulan:</h4>
-            <p id="angka-cicilan">Rp 0</p>
-            <span style="font-size: 0.8rem; color: #636e72;">*Ini hanya simulasi kisaran dasar. Cek brosur di atas untuk angka akurat subsidi dealer.</span>
-        </div>
-    </div>
+            <div class="calc-result" id="result-box">
+                <h4>Hasil Estimasi Cicilan:</h4>
+                <p id="angka-cicilan">Rp 0</p>
+                <small>*Harga bisa berubah sesuai program promo berjalan</small>
+            </div>
 
-    <div class="cta-box">
-        <h3>Lock Promo KTP Ciledug & Kebayoran!</h3>
-        <p style="font-size: 0.9rem; color: #636e72; margin-bottom: 20px;">Data dijemput gratis. Proses cepat dibantu sampai ACC.</p>
-        <a href="https://wa.me/6285283212205?text=Halo%20Mas,%20saya%20sudah%20cek%20brosur%20digital.%20Saya%20minat%20kredit%20motor%20Honda..." class="btn-wa">KONSULTASI GRATIS VIA WA</a>
+            <div class="section-title">2. Data Pemohon (KTP)</div>
+            <label for="nama_pemohon">Nama Pemohon (Sesuai KTP):</label>
+            <input type="text" id="nama_pemohon" placeholder="Masukkan nama lengkap">
+
+            <label for="nama_stnk">Nama Untuk STNK:</label>
+            <input type="text" id="nama_stnk" placeholder="Nama yang tertera di STNK">
+
+            <label for="alamat_lengkap">Alamat Lengkap & Patokan Rumah:</label>
+            <textarea id="alamat_lengkap" placeholder="Contoh: Kp Parung Kored, 003/002, Parung Jaya. Patokan: Sekolah MI Ainul Yaqin"></textarea>
+
+            <label for="status_nikah">Status Pernikahan:</label>
+            <select id="status_nikah">
+                <option value="Belum Menikah">Belum Menikah</option>
+                <option value="Menikah">Menikah</option>
+                <option value="Duda/Janda">Duda/Janda</option>
+            </select>
+
+            <label for="tanggungan">Jumlah Tanggungan:</label>
+            <input type="number" id="tanggungan" placeholder="Contoh: 2">
+
+            <label for="status_rumah">Status Kepemilikan Rumah:</label>
+            <select id="status_rumah">
+                <option value="Milik Sendiri">Milik Sendiri</option>
+                <option value="Milik Orang Tua">Milik Orang Tua</option>
+                <option value="Sewa/Kontrak">Sewa/Kontrak</option>
+                <option value="Rumah Dinas">Rumah Dinas</option>
+            </select>
+
+            <label for="pendidikan">Pendidikan Terakhir:</label>
+            <select id="pendidikan">
+                <option value="SD/SMP">SD/SMP</option>
+                <option value="SMA/SMK">SMA/SMK</option>
+                <option value="D3/S1">D3/S1 atau Lebih</option>
+            </select>
+
+            <label for="nama_ibu">Nama Ibu Kandung:</label>
+            <input type="text" id="nama_ibu" placeholder="Nama ibu kandung pemohon">
+
+            <div class="section-title">3. Data Kerja Pemohon</div>
+            <label for="kerja_nama">Nama Perusahaan/Tempat Kerja:</label>
+            <input type="text" id="kerja_nama" placeholder="Contoh: PT Maju Jaya">
+
+            <label for="kerja_sebagai">Jabatan/Sebagai:</label>
+            <input type="text" id="kerja_sebagai" placeholder="Contoh: Staff Gudang / Driver">
+
+            <label for="kerja_alamat">Alamat Tempat Kerja:</label>
+            <input type="text" id="kerja_alamat" placeholder="Nama daerah/jalan kantor">
+
+            <label for="kerja_lama">Lama Bekerja:</label>
+            <input type="text" id="kerja_lama" placeholder="Contoh: 2 Tahun 3 Bulan">
+
+            <label for="kerja_pendapatan">Rata-rata Pendapatan Per Bulan:</label>
+            <input type="text" id="kerja_pendapatan" placeholder="Contoh: 5.000.000">
+
+            <div class="section-title">4. Kontak Darurat (EMCALL)</div>
+            <label for="emcall_nama">Nama Kontak Darurat:</label>
+            <input type="text" id="emcall_nama" placeholder="Nama saudara/kerabat tidak serumah">
+
+            <label for="emcall_tlp">Nomor HP/WA Kontak Darurat:</label>
+            <input type="text" id="emcall_tlp" placeholder="08xxxxxxxxx">
+
+            <button class="btn-wa" onclick="kirimPengajuan()">KIRIM DATA PENGAJUAN (WA)</button>
+        </div>
     </div>
 
     <section class="faq-wrap">
-        <h2>Pertanyaan Seputar Kredit</h2>
+        <h2>Tanya Jawab Seputar Kredit</h2>
         <div class="faq-item">
             <h3>Berapa lama proses kredit motor Honda di Ciledug?</h3>
             <p>Proses cepat hanya 1-2 hari kerja. Data dijemput langsung ke rumah area Ciledug, Petukangan, dan Kebayoran tanpa biaya tambahan.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Apakah angsuran sudah termasuk asuransi?</h3>
-            <p>Tentu. Seluruh unit yang dikreditkan melalui jaringan kami sudah dicover asuransi kehilangan (TLO) selama masa tenor.</p>
         </div>
     </section>
 </main>
@@ -218,59 +258,111 @@
 <footer class="footer">
     <p>Official Digital Strategy Partner:<br> <a href="https://ciledugpromo.biz.id" target="_blank">CiledugPromo.biz.id</a></p>
     <div class="maps-facade">
-        <img src="img/peta-lokasi-honda-ciledug.webp" alt="Peta Lokasi Honda Ciledug" width="400" height="225" class="img-maps" loading="lazy">
+        <img src="img/peta-lokasi-honda-ciledug.webp" alt="Peta Lokasi Honda Ciledug" class="img-maps" loading="lazy">
     </div>
     <p style="margin-top: 20px; color: #b2bec3;">© 2026 Honda Prima Motor. All Rights Reserved.</p>
 </footer>
 
 <script>
-    /* SCRIPT GESER DESKTOP (TIDAK DIUBAH) */
     function scrollKatalog(direction) {
         const container = document.getElementById('katalog');
         const scrollAmount = container.clientWidth * 0.45; 
         container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
 
-    /* SCRIPT KALKULATOR PINTAR LEADS V4 (INJEKSI JARVIS) */
+    /* GLOBAL VAR UNTUK HASIL CICILAN */
+    let globalCicilan = "0";
+
     function hitungEstimasi() {
-        const motorSelect = document.getElementById('motor');
-        const namaMotor = motorSelect.options[motorSelect.selectedIndex].text;
-        const otr = parseFloat(motorSelect.value);
-        
-        const dpInput = document.getElementById('dp').value;
-        const dp = parseFloat(dpInput);
+        const otr = parseFloat(document.getElementById('motor').value);
+        const dp = parseFloat(document.getElementById('dp').value);
         const tenor = parseInt(document.getElementById('tenor').value);
         
-        if (!dpInput || dp < 500000) {
-            alert("Silakan masukkan nominal DP minimal Rp 500.000");
-            return;
-        }
-
-        if (dp >= otr) {
-            alert("DP tidak boleh lebih besar dari harga motor!");
+        if (dp < 500000) {
+            alert("DP minimal Rp 500.000");
             return;
         }
 
         const pokokHutang = otr - dp;
-        const bungaFlat = 0.022; // Asumsi bunga flat 2.2% per bulan
+        const bungaFlat = 0.022; // Asumsi bunga flat 2.2%
         const totalBunga = pokokHutang * bungaFlat * tenor;
         const totalHutang = pokokHutang + totalBunga;
         const cicilan = totalHutang / tenor;
 
         const formatRupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(cicilan);
-        const formatDP = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dp);
         
-        document.getElementById('angka-cicilan').innerText = formatRupiah;
+        globalCicilan = formatRupiah;
+        document.getElementById('angka-cicilan').innerText = formatRupiah + "/bln";
         document.getElementById('result-box').style.display = 'block';
+        
+        // Scroll otomatis ke hasil
+        document.getElementById('result-box').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
-        // OTOMATISASI LINK WHATSAPP DENGAN DATA HITUNGAN
-        const waLink = document.querySelector('.cta-box .btn-wa');
-        if(waLink) {
-            const waText = `Halo Jenderal, saya sudah hitung simulasi di website. Saya minat promo Honda ini:\n\n🏍️ *Tipe:* ${namaMotor}\n💰 *Rencana DP:* ${formatDP}\n⏱️ *Tenor:* ${tenor} Bulan\n📝 *Hasil Cicilan:* ${formatRupiah}/bulan\n\nMohon bantu cek harga diskon aslinya dan info stoknya ya!`;
-            waLink.href = `https://wa.me/6285283212205?text=${encodeURIComponent(waText)}`;
-            waLink.innerText = "KLAIM DISKON HARGA ASLI (WA)";
-            waLink.style.background = "#d63031"; // Berubah merah tegas
+    function kirimPengajuan() {
+        const motorSelect = document.getElementById('motor');
+        const tipeMotor = motorSelect.options[motorSelect.selectedIndex].text;
+        const otrVal = new Intl.NumberFormat('id-ID').format(motorSelect.value);
+        const dpVal = new Intl.NumberFormat('id-ID').format(document.getElementById('dp').value);
+        const tenorVal = document.getElementById('tenor').value;
+
+        // Data Pemohon
+        const nama = document.getElementById('nama_pemohon').value;
+        const stnk = document.getElementById('nama_stnk').value;
+        const alamat = document.getElementById('alamat_lengkap').value;
+        const nikah = document.getElementById('status_nikah').value;
+        const tanggungan = document.getElementById('tanggungan').value;
+        const rumah = document.getElementById('status_rumah').value;
+        const pendidikan = document.getElementById('pendidikan').value;
+        const ibu = document.getElementById('nama_ibu').value;
+
+        // Data Kerja
+        const k_nama = document.getElementById('kerja_nama').value;
+        const k_sebagai = document.getElementById('kerja_sebagai').value;
+        const k_alamat = document.getElementById('kerja_alamat').value;
+        const k_lama = document.getElementById('kerja_lama').value;
+        const k_pendapatan = document.getElementById('kerja_pendapatan').value;
+
+        // Emcall
+        const e_nama = document.getElementById('emcall_nama').value;
+        const e_tlp = document.getElementById('emcall_tlp').value;
+
+        if(!nama || !alamat || !e_tlp) {
+            alert("Mohon lengkapi setidaknya Nama, Alamat, dan Kontak Darurat agar dapat kami proses!");
+            return;
         }
+
+        const waMessage = `*FORM PENGAJUAN KREDIT MOTOR HONDA*\n\n` +
+            `*DATA UNIT*\n` +
+            `Type : ${tipeMotor}\n` +
+            `Otr : ${otrVal}\n` +
+            `Dp : ${dpVal}\n` +
+            `Tenor : ${tenorVal} Bulan\n` +
+            `Angsuran : ${globalCicilan}\n` +
+            `Program : NSP260009\n\n` +
+            `*DATA PEMOHON*\n` +
+            `NAMA PEMOHON : ${nama}\n` +
+            `NAMA STNK : ${stnk}\n` +
+            `ALAMAT : ${alamat}\n` +
+            `STATUS NIKAH : ${nikah}\n` +
+            `TANGGUNGAN : ${tanggungan}\n` +
+            `STATUS RUMAH : ${rumah}\n` +
+            `PENDIDIKAN : ${pendidikan}\n` +
+            `NAMA IBU KANDUNG : ${ibu}\n\n` +
+            `*DATA KERJA PEMOHON*\n` +
+            `Nama tpt bekerja : ${k_nama}\n` +
+            `Sebagai : ${k_sebagai}\n` +
+            `Alamat : ${k_alamat}\n` +
+            `Lama bekerja : ${k_lama}\n` +
+            `Pendapatan : ${k_pendapatan}\n\n` +
+            `*EMCALL*\n` +
+            `NAMA : ${e_nama}\n` +
+            `NO TLP : ${e_tlp}\n\n` +
+            `*PGC id: PG111240001*\n` +
+            `*SO : fauzi*`;
+
+        const waUrl = `https://wa.me/6285283212205?text=${encodeURIComponent(waMessage)}`;
+        window.open(waUrl, '_blank');
     }
 </script>
 
