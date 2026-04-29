@@ -117,10 +117,91 @@
       "@graph": [
         {
           "@type": "AutoDealer",
-          "@id": "https://kredit-motor-honda-ciledug-terbaru.vercel.app/#dealer",
-          "name": "Honda Prima Motor Ciledug - Mastermind SEO Service",
-          "url": "https://kredit-motor-honda-ciledug-terbaru.vercel.app",
-          "telephone": "+6285283212205"
+          "@id": "https://kredit-motor-honda-ciledug.vercel.app/#dealer",
+          "name": "Honda Prima Motor Ciledug",
+          "url": "https://kredit-motor-honda-ciledug.vercel.app",
+          "telephone": "+6285283212205",
+          "priceRange": "IDR",
+          "image": "https://kredit-motor-honda-ciledug.vercel.app/img/pricelist-honda-beat-sporty-deluxe-smart-key-acc-terbaru-2026.webp",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Jalan Raya Ciledug",
+            "addressLocality": "Tangerang",
+            "addressRegion": "Banten",
+            "postalCode": "15153",
+            "addressCountry": "ID"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-6.2333",
+            "longitude": "106.7167"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "08:00",
+              "closes": "17:00"
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://kredit-motor-honda-ciledug.vercel.app/#service",
+          "serviceType": "Kredit Motor Honda DP Rendah",
+          "provider": { "@id": "https://kredit-motor-honda-ciledug.vercel.app/#dealer" },
+          "areaServed": [
+            { "@type": "City", "name": "Ciledug" },
+            { "@type": "City", "name": "Kebayoran Lama" },
+            { "@type": "City", "name": "Kebayoran Baru" },
+            { "@type": "City", "name": "Petukangan" },
+            { "@type": "City", "name": "Pesanggrahan" },
+            { "@type": "City", "name": "Cipulir" },
+            { "@type": "City", "name": "Tangerang" },
+            { "@type": "City", "name": "Jakarta Selatan" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Katalog Honda 2026",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Motorcycle", "name": "Honda Beat Sporty" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Motorcycle", "name": "Honda Vario 125/160" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Motorcycle", "name": "Honda Scoopy" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Motorcycle", "name": "Honda PCX 160" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Motorcycle", "name": "Honda ADV 160" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Motorcycle", "name": "Honda Stylo 160" } }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://kredit-motor-honda-ciledug.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Berapa lama proses kredit motor Honda di Ciledug?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Proses ACC sangat cepat, hanya membutuhkan waktu 1-2 hari kerja. Tim lapangan kami akan menjemput data (KTP & KK) langsung ke rumah Anda di area Ciledug, Petukangan, dan Kebayoran tanpa memungut biaya tambahan."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah bisa kredit motor tanpa DP atau DP ringan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tentu bisa! Kami memiliki program promo reguler DP rendah mulai dari Rp 500.000 hingga Rp 1.000.000 untuk unit tertentu seperti Honda BeAT dan Genio."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Apakah KTP luar daerah (kampung) bisa diproses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kami memprioritaskan KTP JABODETABEK. Namun, jika Anda KTP daerah tetapi domisili tetap di area Tangerang/Jakarta, kami dapat mengusahakan prosesnya."
+              }
+            }
+          ]
         }
       ]
     }
