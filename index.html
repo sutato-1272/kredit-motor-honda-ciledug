@@ -77,6 +77,7 @@
         .btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 1.125rem 1.5rem; font-size: 1.05rem; font-weight: 800; border-radius: 8px; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border: none; text-transform: uppercase; }
         .btn:active { transform: scale(0.98); }
         .btn-wa { background: #1da851; color: #fff; box-shadow: 0 4px 14px 0 rgba(29, 168, 81, 0.2); margin-top: 10px; }
+        .btn-wa:disabled { background: #94a3b8; cursor: not-allowed; box-shadow: none; }
 
         /* FAQ EXTENDED SUTATO */
         .faq-wrap { padding: 2rem 1.5rem; background: var(--card); margin: 2rem auto; max-width: 800px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); width: 92%; }
@@ -244,15 +245,12 @@
             Hanya melayani KTP wilayah <b>Tangerang, DKI Jakarta, Bekasi, dan Depok</b>.
         </div>
 
-        <!-- INJEKSI MESIN 2: WEB3FORMS -->
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- FORM DENGAN ID KHUSUS UNTUK INTERSEPSI AJAX -->
+        <form id="formPenjeratProspek">
             <!-- Ganti value di bawah ini dengan Access Key dari Web3Forms Anda -->
             <input type="hidden" name="access_key" value="bea8e485-773b-40a3-88f1-78a1fe496511">
             <input type="hidden" name="subject" value="Prospek Baru: Pengajuan Kredit Motor Honda Ciledug">
             <input type="hidden" name="from_name" value="Sistem Notifikasi Vercel">
-            
-            <!-- INJEKSI MESIN 3: WA TRIGGER REDIRECT -->
-            <input type="hidden" name="redirect" value="https://wa.me/6285283212205?text=Halo%20Admin%20Prima%20Motor,%20saya%20sudah%20mengisi%20formulir%20pengajuan%20kredit%20di%20website.%20Mohon%20info%20persyaratan%20selanjutnya.">
 
             <label for="motor">Pilih Tipe Motor:</label>
             <select id="motor" name="Tipe_Motor" required>
@@ -293,7 +291,7 @@
                 <input type="tel" id="no_wa" name="Nomor_WhatsApp" placeholder="Contoh: 081234567890" required>
             </div>
 
-            <button type="submit" class="btn btn-wa">KIRIM DATA & LANJUT KE WHATSAPP</button>
+            <button type="submit" id="btnSubmitForm" class="btn btn-wa">KIRIM DATA & LANJUT KE WHATSAPP</button>
         </form>
     </div>
 
@@ -331,11 +329,48 @@
 </a>
 
 <script>
+    // FUNGSI GESER KATALOG
     function scrollKatalog(direction) {
         const container = document.getElementById('katalog');
         const scrollAmount = container.clientWidth * 0.45; 
         container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
+
+    // FUNGSI INJEKSI SILENT AJAX (MENGATASI BLOCK REDIRECT)
+    document.getElementById('formPenjeratProspek').addEventListener('submit', function(e) {
+        e.preventDefault(); // Mencegah reload halaman
+        const form = e.target;
+        const formData = new FormData(form);
+        const btn = document.getElementById('btnSubmitForm');
+        
+        // Ubah tombol jadi status loading sementara data meluncur ke email Basecamp
+        const originalText = btn.innerText;
+        btn.innerText = "MENGAMANKAN DATA...";
+        btn.disabled = true;
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                // Begitu email masuk ke Basecamp, JARVIS langsung melempar klien ke WA secara brutal
+                const waUrl = "https://wa.me/6285283212205?text=Halo%20Admin%20Prima%20Motor,%20saya%20sudah%20mengisi%20formulir%20pengajuan%20kredit%20di%20website.%20Mohon%20info%20persyaratan%20selanjutnya.";
+                window.location.href = waUrl;
+            } else {
+                alert("Terjadi gangguan sistem, mohon coba kembali.");
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("Koneksi gagal, periksa jaringan internet Anda.");
+            btn.innerText = originalText;
+            btn.disabled = false;
+        });
+    });
 </script>
 
 </body>
