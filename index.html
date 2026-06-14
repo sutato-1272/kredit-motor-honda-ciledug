@@ -245,50 +245,46 @@
             Hanya melayani KTP wilayah <b>Tangerang, DKI Jakarta, Bekasi, dan Depok</b>.
         </div>
 
-        <!-- FORM DENGAN ID KHUSUS UNTUK INTERSEPSI AJAX -->
         <form id="formPenjeratProspek">
-            <!-- Ganti value di bawah ini dengan Access Key dari Web3Forms Anda -->
-            <input type="hidden" name="access_key" value="bea8e485-773b-40a3-88f1-78a1fe496511">
-            <input type="hidden" name="subject" value="Prospek Baru: Pengajuan Kredit Motor Honda Ciledug">
-            <input type="hidden" name="from_name" value="Sistem Notifikasi Vercel">
-
             <label for="motor">Pilih Tipe Motor:</label>
-            <select id="motor" name="Tipe_Motor" required>
-                <option value="Beat Sporty CBS (OTR 19.337.000)">Beat Sporty CBS (OTR 19.337.000)</option>
-                <option value="Beat Sporty Deluxe/Smartkey (OTR 21.162.000)">Beat Sporty Deluxe/Smartkey (OTR 21.162.000)</option>
-                <option value="Genio CBS ISS (OTR 21.052.000)">Genio CBS ISS (OTR 21.052.000)</option>
-                <option value="Scoopy Prestige/Stylish (OTR 24.602.000)">Scoopy Prestige/Stylish (OTR 24.602.000)</option>
-                <option value="Vario 125 CBS (OTR 25.300.000)">Vario 125 CBS (OTR 25.300.000)</option>
-                <option value="Vario 125 CBS ISS (OTR 27.010.000)">Vario 125 CBS ISS (OTR 27.010.000)</option>
-                <option value="Vario 160 CBS (OTR 28.614.000)">Vario 160 CBS (OTR 28.614.000)</option>
-                <option value="Vario 160 ABS (OTR 32.363.500)">Vario 160 ABS (OTR 32.363.500)</option>
-                <option value="Stylo 160 ABS (OTR 33.480.000)">Stylo 160 ABS (OTR 33.480.000)</option>
-                <option value="PCX 160 ABS RoadSync (OTR 43.173.000)">PCX 160 ABS RoadSync (OTR 43.173.000)</option>
-                <option value="ADV 160 CBS (OTR 37.772.000)">ADV 160 CBS (OTR 37.772.000)</option>
+            <!-- Menggunakan Value ASLI berupa Angka untuk Kalkulator -->
+            <select id="motor" name="motor" required>
+                <option value="19337000">Beat Sporty CBS (OTR 19.337.000)</option>
+                <option value="21162000">Beat Sporty Deluxe/Smartkey (OTR 21.162.000)</option>
+                <option value="21052000">Genio CBS ISS (OTR 21.052.000)</option>
+                <option value="24602000">Scoopy Prestige/Stylish (OTR 24.602.000)</option>
+                <option value="25300000">Vario 125 CBS (OTR 25.300.000)</option>
+                <option value="27010000">Vario 125 CBS ISS (OTR 27.010.000)</option>
+                <option value="28614000">Vario 160 CBS (OTR 28.614.000)</option>
+                <option value="32363500">Vario 160 ABS (OTR 32.363.500)</option>
+                <option value="33480000">Stylo 160 ABS (OTR 33.480.000)</option>
+                <option value="43173000">PCX 160 ABS RoadSync (OTR 43.173.000)</option>
+                <option value="37772000">ADV 160 CBS (OTR 37.772.000)</option>
             </select>
 
             <label for="dp">Rencana Uang Muka (DP):</label>
-            <input type="text" id="dp" name="Rencana_DP" placeholder="Contoh: Rp 2.500.000" required>
+            <input type="number" id="dp" name="dp" placeholder="Contoh: 2500000" value="2500000" required>
 
             <label for="tenor">Jangka Waktu (Bulan):</label>
-            <select id="tenor" name="Tenor_Bulan" required>
-                <option value="11 Bulan">11 Bulan</option>
-                <option value="17 Bulan">17 Bulan</option>
-                <option value="23 Bulan">23 Bulan</option>
-                <option value="27 Bulan">27 Bulan</option>
-                <option value="29 Bulan">29 Bulan</option>
-                <option value="33 Bulan">33 Bulan</option>
-                <option value="35 Bulan" selected>35 Bulan</option>
+            <!-- Menggunakan Value ASLI berupa Angka untuk Kalkulator -->
+            <select id="tenor" name="tenor" required>
+                <option value="11">11 Bulan</option>
+                <option value="17">17 Bulan</option>
+                <option value="23">23 Bulan</option>
+                <option value="27">27 Bulan</option>
+                <option value="29">29 Bulan</option>
+                <option value="33">33 Bulan</option>
+                <option value="35" selected>35 Bulan</option>
             </select>
 
             <div style="margin-top: 15px;">
                 <label for="nama_pemohon">Nama Lengkap (Sesuai KTP):</label>
-                <input type="text" id="nama_pemohon" name="Nama_Pemohon" placeholder="Masukkan nama Anda di sini" required>
+                <input type="text" id="nama_pemohon" name="nama_pemohon" placeholder="Masukkan nama Anda di sini" required>
             </div>
 
             <div style="margin-top: 5px;">
                 <label for="no_wa">Nomor WhatsApp Aktif:</label>
-                <input type="tel" id="no_wa" name="Nomor_WhatsApp" placeholder="Contoh: 081234567890" required>
+                <input type="tel" id="no_wa" name="no_wa" placeholder="Contoh: 081234567890" required>
             </div>
 
             <button type="submit" id="btnSubmitForm" class="btn btn-wa">KIRIM DATA & LANJUT KE WHATSAPP</button>
@@ -336,14 +332,64 @@
         container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
 
-    // FUNGSI INJEKSI SILENT AJAX (DISEMPURNAKAN DENGAN JSON HEADER)
+    // FUNGSI HYBRID TINGKAT DEWA: HITUNG CICILAN & KIRIM DATA
     document.getElementById('formPenjeratProspek').addEventListener('submit', function(e) {
-        e.preventDefault(); // Mencegah form reload bawaan browser
-        const form = e.target;
-        const formData = new FormData(form);
+        e.preventDefault(); // Mencegah reload halaman
         const btn = document.getElementById('btnSubmitForm');
         
-        // Ubah tombol jadi status loading
+        // 1. TANGKAP DAN HITUNG DATA UNTUK WHATSAPP
+        const motorSelect = document.getElementById('motor');
+        const tipeMotorText = motorSelect.options[motorSelect.selectedIndex].text; 
+        const otrValue = parseFloat(motorSelect.value); 
+        
+        let dpVal = parseFloat(document.getElementById('dp').value) || 0;
+        if (dpVal < 500000) {
+            alert("DP minimal Rp 500.000");
+            return;
+        }
+
+        const tenorSelect = document.getElementById('tenor');
+        const tenorBulan = parseInt(tenorSelect.value);
+
+        const nama = document.getElementById('nama_pemohon').value;
+        const noWa = document.getElementById('no_wa').value;
+
+        // Proses Rumus Cicilan (Bunga Flat 2.2%)
+        const pokokHutang = otrValue - dpVal;
+        const totalBunga = pokokHutang * 0.022 * tenorBulan;
+        const cicilan = (pokokHutang + totalBunga) / tenorBulan;
+
+        // Format angka ke Rupiah
+        const formatCicilanRupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(cicilan);
+        const formatDPRupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dpVal);
+
+        // Merakit Teks Spesifik untuk WhatsApp
+        const waMessage = `*PENGAJUAN KREDIT MOTOR HONDA (CEPAT)*\n\n` +
+            `*DATA SIMULASI:*\n` +
+            `Nama : ${nama}\n` +
+            `Unit : ${tipeMotorText}\n` +
+            `DP : ${formatDPRupiah}\n` +
+            `Tenor : ${tenorBulan} Bulan\n` +
+            `Estimasi Angsuran : ${formatCicilanRupiah} /bln\n\n` +
+            `Halo Admin Prima Motor, saya tertarik dengan simulasi di atas. Mohon info persyaratan lengkapnya (KTP & KK).`;
+
+        const waUrl = `https://wa.me/6285283212205?text=${encodeURIComponent(waMessage)}`;
+
+        // 2. MERAKIT DATA RAPI UNTUK EMAIL BASECAMP (WEB3FORMS)
+        const formData = new FormData();
+        formData.append("access_key", "bea8e485-773b-40a3-88f1-78a1fe496511");
+        formData.append("subject", "Prospek Baru: Pengajuan Kredit Motor Honda Ciledug");
+        formData.append("from_name", "Sistem Notifikasi Vercel");
+        
+        // Memasukkan data bersih agar enak dibaca di email
+        formData.append("Nama_Pemohon", nama);
+        formData.append("Nomor_WhatsApp", noWa);
+        formData.append("Tipe_Motor", tipeMotorText); 
+        formData.append("Rencana_DP", formatDPRupiah);
+        formData.append("Tenor_Cicilan", tenorBulan + " Bulan");
+        formData.append("Estimasi_Angsuran", formatCicilanRupiah);
+
+        // 3. EKSEKUSI PENGIRIMAN SILUMAN
         const originalText = btn.innerText;
         btn.innerText = "MENGAMANKAN DATA...";
         btn.disabled = true;
@@ -351,27 +397,19 @@
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: {
-                'Accept': 'application/json' // INI KUNCI UTAMA AGAR TIDAK MUNCUL LINK SUBMIT/SUCCESS
+                'Accept': 'application/json'
             },
             body: formData
         })
         .then(response => response.json())
         .then(data => {
-            if(data.success) {
-                // Begitu sinyal sukses diterima, JARVIS langsung melempar klien ke WA
-                const waUrl = "https://wa.me/6285283212205?text=Halo%20Admin%20Prima%20Motor,%20saya%20sudah%20mengisi%20formulir%20pengajuan%20kredit%20di%20website.%20Mohon%20info%20persyaratan%20selanjutnya.";
-                window.location.href = waUrl;
-            } else {
-                alert("Terjadi gangguan sistem, mohon coba kembali.");
-                btn.innerText = originalText;
-                btn.disabled = false;
-            }
+            // Setelah data terkirim aman ke email, lemparkan prospek ke WhatsApp Admin!
+            window.location.href = waUrl;
         })
         .catch(error => {
             console.error('Error:', error);
-            alert("Koneksi gagal, periksa jaringan internet Anda.");
-            btn.innerText = originalText;
-            btn.disabled = false;
+            // Tetap lempar ke WA walau koneksi form gagal agar lead tidak lepas
+            window.location.href = waUrl; 
         });
     });
 </script>
