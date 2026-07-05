@@ -79,14 +79,6 @@
         .btn-wa { background: #1da851; color: #fff; box-shadow: 0 4px 14px 0 rgba(29, 168, 81, 0.2); margin-top: 10px; }
         .btn-wa:disabled { background: #94a3b8; cursor: not-allowed; box-shadow: none; }
 
-        /* FAQ EXTENDED SUTATO */
-        .faq-wrap { padding: 2rem 1.5rem; background: var(--card); margin: 2rem auto; max-width: 800px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); width: 92%; }
-        .faq-wrap h2 { text-align: center; font-size: 1.35rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--dark); }
-        .faq-item { margin-bottom: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.2rem; }
-        .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .faq-item h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; line-height: 1.4;}
-        .faq-item p { font-size: 0.9rem; color: #475569; line-height: 1.6; }
-
         .footer { background: #fff; border-top: 1px solid var(--border); padding: 3rem 1.5rem; text-align: center; margin-top: 3rem; }
         .footer p { font-size: 0.9rem; color: #475569; font-weight: 600; margin-bottom: 10px; }
         .footer a { color: var(--primary-dark); text-decoration: underline; font-weight: 800; }
@@ -96,6 +88,155 @@
         .sticky-wa { position: fixed; bottom: 25px; right: 25px; z-index: 9999; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4); cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .sticky-wa:hover { transform: scale(1.1) rotate(5deg); }
         .sticky-wa svg { width: 35px; height: 35px; fill: white; }
+    </style>
+
+    <!-- BLOK CSS JARVIS (ANTI-BLEED) -->
+    <style>
+        .jarvis-faq-wrapper {
+            max-width: 800px;
+            margin: 30px auto;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 0 15px;
+        }
+        .jarvis-faq-title {
+            color: #b91c1c; 
+            text-align: center; 
+            font-weight: bold; 
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .jarvis-faq-item {
+            border-bottom: 2px solid #cbd5e1;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+        .jarvis-faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #000;
+            gap: 15px;
+        }
+        .jarvis-q-text {
+            flex: 1;
+        }
+        .jarvis-voice-btn {
+            background-color: gold;
+            color: #000;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: background 0.3s;
+        }
+        .jarvis-voice-btn:hover {
+            background-color: #e6c200;
+        }
+        .jarvis-faq-answer {
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        .jarvis-wa-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 8px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        /* AI TRAP TRIGGER */
+        .jarvis-ai-trap {
+            position: fixed;
+            bottom: 110px; /* Dinaikkan sedikit agar tidak menabrak sticky WA asli */
+            right: 25px;
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border: 3px solid gold;
+            cursor: pointer;
+            z-index: 99999;
+            transition: transform 0.3s ease;
+        }
+        .jarvis-ai-trap:hover {
+            transform: scale(1.1);
+        }
+        .jarvis-trigger-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        /* CHATBOX AI ASISTEN */
+        .jarvis-chatbox {
+            display: none;
+            position: fixed;
+            bottom: 190px;
+            right: 25px;
+            width: 320px;
+            background: white;
+            border: 2px solid gold;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            z-index: 99998;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .jarvis-chatbox-header {
+            background: gold;
+            color: #000;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .jarvis-chatbox-body {
+            padding: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: #fdfdfd;
+        }
+        .jarvis-chat-msg {
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            background: #f1f1f1;
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #333;
+        }
+        .jarvis-chat-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+        .jarvis-chat-opt-btn {
+            background: white;
+            border: 1px solid gold;
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .jarvis-chat-opt-btn:hover {
+            background: gold;
+        }
     </style>
 
     <script type="application/ld+json">
@@ -247,7 +388,6 @@
 
         <form id="formPenjeratProspek">
             <label for="motor">Pilih Tipe Motor:</label>
-            <!-- Menggunakan Value ASLI berupa Angka untuk Kalkulator -->
             <select id="motor" name="motor" required>
                 <option value="19337000">Beat Sporty CBS (OTR 19.337.000)</option>
                 <option value="21162000">Beat Sporty Deluxe/Smartkey (OTR 21.162.000)</option>
@@ -266,7 +406,6 @@
             <input type="number" id="dp" name="dp" placeholder="Contoh: 2500000" value="2500000" required>
 
             <label for="tenor">Jangka Waktu (Bulan):</label>
-            <!-- Menggunakan Value ASLI berupa Angka untuk Kalkulator -->
             <select id="tenor" name="tenor" required>
                 <option value="11">11 Bulan</option>
                 <option value="17">17 Bulan</option>
@@ -291,35 +430,100 @@
         </form>
     </div>
 
-    <section class="faq-wrap">
-        <h2>Tanya Jawab Seputar Kredit (FAQ)</h2>
-        <div class="faq-item">
-            <h3>Berapa lama proses kredit motor Honda di Ciledug?</h3>
-            <p>Proses ACC sangat cepat, hanya membutuhkan waktu 1-2 hari kerja. Tim lapangan kami akan menjemput data (KTP & KK) langsung ke rumah Anda di area Ciledug, Petukangan, dan Kebayoran tanpa memungut biaya tambahan.</p>
+    <!-- BLOK HTML JARVIS (AUDIBLE FAQ) -->
+    <div class="jarvis-faq-wrapper">
+        <div class="jarvis-faq-title">Tanya Jawab Pengajuan Kredit Motor Honda Ciledug</div>
+        
+        <div class="jarvis-faq-item">
+            <div class="jarvis-faq-question">
+                <span class="jarvis-q-text">1. Apakah ada promo DP murah dan potong tenor untuk warga Puri Beta dan Mencong?</span>
+                <button class="jarvis-voice-btn" data-text="Pasti ada! Warga Puri Beta dan Mencong bisa bawa pulang Scoopy, Stylo, atau Vario dengan DP super ceper dan potongan tenor cicilan. Kuota sangat terbatas, segera amankan bulan ini!">Dengarkan AI</button>
+            </div>
+            <div class="jarvis-faq-answer">
+                Pasti ada! Warga Puri Beta dan Mencong bisa bawa pulang Scoopy, Stylo, atau Vario dengan promo DP super murah dan potongan tenor cicilan. Kuota bulan ini sangat terbatas, jangan sampai keduluan yang lain!
+                <br><a href="https://wa.me/6285283212205?text=Halo%20saya%20mau%20tanya%20Promo%20DP%20Murah%20di%20Ciledug" class="jarvis-wa-btn" target="_blank">Klaim Promo DP Murah via WA</a>
+            </div>
         </div>
-        <div class="faq-item">
-            <h3>Apakah bisa kredit motor tanpa DP atau DP ringan?</h3>
-            <p>Tentu bisa! Kami memiliki program promo reguler DP rendah mulai dari Rp 500.000 hingga Rp 1.000.000 untuk unit tertentu seperti Honda BeAT dan Genio. Silakan ajukan simulasi di atas untuk melihat penawaran terbaik bulan ini.</p>
+
+        <div class="jarvis-faq-item">
+            <div class="jarvis-faq-question">
+                <span class="jarvis-q-text">2. Saya KTP Jakarta tapi domisili di Kreo / Budi Luhur, apa pengajuan online saya bisa di-ACC?</span>
+                <button class="jarvis-voice-btn" data-text="Tenang saja, kami melayani KTP Jabodetabek. Data warga Budi Luhur dan Kreo kami bantu sampai deal secepat kilat tanpa harus ke diler.">Dengarkan AI</button>
+            </div>
+            <div class="jarvis-faq-answer">
+                Tenang saja! Kami diler resmi yang melayani KTP seluruh Jabodetabek (Tangerang, DKI, Bekasi, Depok). Domisili Budi Luhur atau Kreo pasti kami bantu datanya sampai DEAL secepat kilat!
+                <br><a href="https://wa.me/6285283212205?text=Halo%20KTP%20saya%20luar%20tapi%20domisili%20Ciledug,%20mau%20pengajuan%20online" class="jarvis-wa-btn" target="_blank">Kirim KTP via WA Sekarang</a>
+            </div>
         </div>
-        <div class="faq-item">
-            <h3>Bagaimana sistem pembayaran angsurannya?</h3>
-            <p>Pembayaran angsuran sangat mudah. Anda bisa membayarnya melalui Indomaret, Alfamart, ATM BCA/Mandiri/BRI, atau melalui aplikasi M-Banking setelah menerima nomor kontrak dari pihak leasing (FIF, Adira, OTO, dsb).</p>
+
+        <div class="jarvis-faq-item">
+            <div class="jarvis-faq-question">
+                <span class="jarvis-q-text">3. Apa betul proses pengajuan dari Petukangan atau Cipulir bisa 100% via WhatsApp?</span>
+                <button class="jarvis-voice-btn" data-text="Betul seratus persen. Udah capek tua di jalan macet Ciledug Raya, mending proses via WhatsApp aja. Motor langsung parkir di garasi Anda tanpa kepanasan ke showroom.">Dengarkan AI</button>
+            </div>
+            <div class="jarvis-faq-answer">
+                Betul 100%! Udah capek tua di jalan akibat macetnya jalur Ciledug Raya dari Cipulir sampai Petukangan? Jangan biarkan waktu terbuang percuma survei diler ke diler. Proses cukup via WhatsApp, rebahan santai, motor diantar!
+                <br><a href="https://wa.me/6285283212205?text=Halo%20saya%20mau%20proses%20via%20WA%20dari%20Petukangan" class="jarvis-wa-btn" target="_blank">Proses 100% via WA</a>
+            </div>
         </div>
-        <div class="faq-item">
-            <h3>Apakah KTP luar daerah (kampung) bisa diproses?</h3>
-            <p>Saat ini, kami memprioritaskan pemohon dengan KTP JABODETABEK (Tangerang, DKI Jakarta, Bekasi, Depok). Namun, jika Anda memiliki KTP daerah tetapi memiliki domisili/tempat tinggal tetap atau memiliki penjamin di wilayah Jabodetabek, kami dapat mengusahakan prosesnya. Silakan diskusikan via WhatsApp.</p>
+
+        <div class="jarvis-faq-item">
+            <div class="jarvis-faq-question">
+                <span class="jarvis-q-text">4. Berapa lama proses sampai motor diantar ke Kebayoran Lama / Tanah Seratus?</span>
+                <button class="jarvis-voice-btn" data-text="Proses secepat kilat! Cukup kirim foto K T P dan K K asli, tim kami urus birokrasinya, langsung ACC dan unit siap luncur.">Dengarkan AI</button>
+            </div>
+            <div class="jarvis-faq-answer">
+                Proses pengajuan ACC cepat! Cukup kirim foto KTP/KK asli secara online. Tim kami yang akan urus semua birokrasi, hari ini ACC, unit motor langsung siap luncur ke Kebayoran Lama atau Tanah Seratus.
+                <br><a href="https://wa.me/6285283212205?text=Halo%20saya%20mau%20tanya%20stok%20dan%20waktu%20pengiriman" class="jarvis-wa-btn" target="_blank">Cek Stok Unit Cepat</a>
+            </div>
         </div>
-    </section>
+
+        <div class="jarvis-faq-item">
+            <div class="jarvis-faq-question">
+                <span class="jarvis-q-text">5. Bagaimana cara mendapatkan brosur harga OTR terbaru di Ciledug?</span>
+                <button class="jarvis-voice-btn" data-text="Gampang banget! Hubungi nomor whatsapp resmi kami di bawah, brosur harga OTR terbaru langsung dikirimkan ke handphone Anda dalam hitungan detik.">Dengarkan AI</button>
+            </div>
+            <div class="jarvis-faq-answer">
+                Tidak perlu repot kepanasan datang ke diler resmi terdekat. Langsung klik tombol di bawah, dan brosur harga OTR terbaru beserta simulasi cicilannya akan otomatis kami kirimkan ke WhatsApp Anda.
+                <br><a href="https://wa.me/6285283212205?text=Halo%20minta%20brosur%20harga%20OTR%20terbaru%20dong" class="jarvis-wa-btn" target="_blank">Minta Brosur via WA</a>
+            </div>
+        </div>
+    </div>
+
 </main>
 
 <footer class="footer">
-    <p>Official Digital Strategy Partner:<br> <a href="https://ciledugpromo.biz.id" target="_blank">CiledugPromo.biz.id</a></p>
+    <p>Udang capek tua di jalan akibat macetnya jalur Ciledug Raya? Jangan biarkan waktu Anda terbuang percuma hanya untuk survei dari diler ke diler. Gak perlu repot kepanasan datang ke showroom, cukup rebahan santai dan kirim foto KTP/KK asli, tim kami yang akan urus semua birokrasi sampai motor incaran parkir di garasi Anda. Amankan kuota promo DP super murah dan potongan tenor bulan ini, klik sekarang di <a href="https://kredit-motor-honda-ciledug-terbaru.vercel.app/" target="_blank" rel="dofollow">Kredit Motor Honda Ciledug</a> untuk proses deal secepat kilat khusus warga ber-KTP Jabodetabek!</p>
+    <br>
+    <p>Official Digital Strategy Partner:<br> <a href="https://dongkrakusaha.com" target="_blank">DongkrakUsaha.com</a></p>
     <div class="maps-facade">
         <img src="img/peta-lokasi-honda-ciledug.webp" alt="Peta Lokasi Honda Ciledug" class="img-maps" loading="lazy">
     </div>
     <p style="margin-top: 30px; font-size: 0.8rem;">© 2026 Honda Prima Motor. All Rights Reserved.</p>
 </footer>
 
+<!-- BLOK HTML JARVIS (AI TRAP & CHATBOX) -->
+<div class="jarvis-ai-trap" id="jarvis-trap-btn">
+    <img src="https://dongkrakusaha.com/gambarbebas/1142820260706-043041_logo%20AI%20+%20Tanya%20Ai.jpg" alt="Asisten AI Honda Ciledug" class="jarvis-trigger-img">
+</div>
+
+<div class="jarvis-chatbox" id="jarvis-ai-chatbox">
+    <div class="jarvis-chatbox-header">
+        Asisten Kredit Honda Ciledug
+    </div>
+    <div class="jarvis-chatbox-body" id="jarvis-chat-body">
+        <!-- JS merender pesan di sini -->
+    </div>
+    <div class="jarvis-chat-options" id="jarvis-chat-opts">
+        <button class="jarvis-chat-opt-btn" data-intent="harga">Berapa DP & Cicilannya?</button>
+        <button class="jarvis-chat-opt-btn" data-intent="lokasi">Cover Area Mana Aja?</button>
+        <button class="jarvis-chat-opt-btn" data-intent="waktu">Berapa Lama Proses ACC?</button>
+        <button class="jarvis-chat-opt-btn" data-intent="kualitas">KTP Luar Bisa Kredit?</button>
+        <button class="jarvis-chat-opt-btn" data-intent="pesan">Gimana Cara Pesannya?</button>
+    </div>
+</div>
+
+<!-- TOMBOL STICKY WA ASLI -->
 <a href="https://wa.me/6285283212205?text=Halo%20Admin%20Prima%20Motor,%20saya%20warga%20sekitar%20nih,%20mau%20tanya%20promo%20kredit%20DP%20paling%20rendah%20untuk%20bulan%20ini%20dong." class="sticky-wa" aria-label="Hubungi kami di WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
@@ -334,10 +538,9 @@
 
     // FUNGSI HYBRID TINGKAT DEWA: HITUNG CICILAN & KIRIM DATA
     document.getElementById('formPenjeratProspek').addEventListener('submit', function(e) {
-        e.preventDefault(); // Mencegah reload halaman
+        e.preventDefault(); 
         const btn = document.getElementById('btnSubmitForm');
         
-        // 1. TANGKAP DAN HITUNG DATA UNTUK WHATSAPP
         const motorSelect = document.getElementById('motor');
         const tipeMotorText = motorSelect.options[motorSelect.selectedIndex].text; 
         const otrValue = parseFloat(motorSelect.value); 
@@ -354,16 +557,13 @@
         const nama = document.getElementById('nama_pemohon').value;
         const noWa = document.getElementById('no_wa').value;
 
-        // Proses Rumus Cicilan (Bunga Flat 2.2%)
         const pokokHutang = otrValue - dpVal;
         const totalBunga = pokokHutang * 0.022 * tenorBulan;
         const cicilan = (pokokHutang + totalBunga) / tenorBulan;
 
-        // Format angka ke Rupiah
         const formatCicilanRupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(cicilan);
         const formatDPRupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dpVal);
 
-        // Merakit Teks Spesifik untuk WhatsApp
         const waMessage = `*PENGAJUAN KREDIT MOTOR HONDA (CEPAT)*\n\n` +
             `*DATA SIMULASI:*\n` +
             `Nama : ${nama}\n` +
@@ -375,13 +575,11 @@
 
         const waUrl = `https://wa.me/6285283212205?text=${encodeURIComponent(waMessage)}`;
 
-        // 2. MERAKIT DATA RAPI UNTUK EMAIL BASECAMP (WEB3FORMS)
         const formData = new FormData();
         formData.append("access_key", "bea8e485-773b-40a3-88f1-78a1fe496511");
         formData.append("subject", "Prospek Baru: Pengajuan Kredit Motor Honda Ciledug");
         formData.append("from_name", "Sistem Notifikasi Vercel");
         
-        // Memasukkan data bersih agar enak dibaca di email
         formData.append("Nama_Pemohon", nama);
         formData.append("Nomor_WhatsApp", noWa);
         formData.append("Tipe_Motor", tipeMotorText); 
@@ -389,7 +587,6 @@
         formData.append("Tenor_Cicilan", tenorBulan + " Bulan");
         formData.append("Estimasi_Angsuran", formatCicilanRupiah);
 
-        // 3. EKSEKUSI PENGIRIMAN SILUMAN
         const originalText = btn.innerText;
         btn.innerText = "MENGAMANKAN DATA...";
         btn.disabled = true;
@@ -403,15 +600,89 @@
         })
         .then(response => response.json())
         .then(data => {
-            // Setelah data terkirim aman ke email, lemparkan prospek ke WhatsApp Admin!
             window.location.href = waUrl;
         })
         .catch(error => {
             console.error('Error:', error);
-            // Tetap lempar ke WA walau koneksi form gagal agar lead tidak lepas
             window.location.href = waUrl; 
         });
     });
+</script>
+
+<!-- BLOK JS JARVIS (OTAK AI & TEXT-TO-SPEECH) -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // 1. MODULE TEXT-TO-SPEECH (RATE: 0.88, PITCH: 0.82)
+    const voiceBtns = document.querySelectorAll('.jarvis-voice-btn');
+    const synth = window.speechSynthesis;
+
+    voiceBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            synth.cancel(); 
+            const textToSpeak = this.getAttribute('data-text');
+            const utterThis = new SpeechSynthesisUtterance(textToSpeak);
+            
+            utterThis.lang = 'id-ID';
+            utterThis.rate = 0.88;
+            utterThis.pitch = 0.82;
+            
+            synth.speak(utterThis);
+        });
+    });
+
+    // 2. MODULE STATIC-AI CHATBOX
+    const trapBtn = document.getElementById('jarvis-trap-btn');
+    const chatbox = document.getElementById('jarvis-ai-chatbox');
+    const chatBody = document.getElementById('jarvis-chat-body');
+    const chatOpts = document.querySelectorAll('.jarvis-chat-opt-btn');
+    
+    let isChatOpen = false;
+
+    trapBtn.addEventListener('click', function() {
+        isChatOpen = !isChatOpen;
+        chatbox.style.display = isChatOpen ? 'block' : 'none';
+        
+        if (isChatOpen && chatBody.innerHTML.trim() === '') {
+            addJarvisMessage("Halo Bosku! Saya Asisten AI dari <strong>Kredit Motor Honda Ciledug</strong>. Jangan biarkan waktu Anda terbuang percuma hanya untuk survei diler. Ada yang bisa saya bantu agar motor incaran cepat parkir di garasi?");
+        }
+    });
+
+    function addJarvisMessage(text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'jarvis-chat-msg';
+        msgDiv.innerHTML = text;
+        chatBody.appendChild(msgDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    const aiResponses = {
+        'harga': "Kebetulan banget Bos! Kita lagi ada <strong>Promo DP Murah & Potong Tenor</strong> bulan ini khusus tipe Scoopy, Stylo, dan Vario. Stok cepat habis, amankan kuota promonya sekarang juga via WA!",
+        'lokasi': "Kita melayani sepanjang <strong>Ciledug Raya, Petukangan, Cipulir, Kreo, Puri Beta, Mencong, Budi Luhur, sampai Kebayoran Lama</strong>. Gak perlu repot ke showroom, rebahan aja data kita urus online!",
+        'waktu': "Secepat kilat! Cukup kirim foto KTP/KK asli hari ini, tim kami bantu birokrasi sampai ACC. Begitu turun, motor langsung kita antar ke depan rumah Anda tanpa biaya tersembunyi.",
+        'kualitas': "Aman! Kami melayani <strong>seluruh KTP Jabodetabek</strong> (Tangerang, DKI, Bekasi, Depok). Data KTP luar daerah tapi domisili Ciledug sekitarnya PASTI kami bantu sampai DEAL!",
+        'pesan': "Pilihan cerdas! Udah capek tua di jalan akibat macet, mending langsung proses via WhatsApp. Klik tombol di bawah ini, kirim KTP, dan biarkan kami yang bekerja keras untuk Anda!<br><br><a href='https://wa.me/6285283212205?text=Halo%20saya%20mau%20deal%20motor%20Honda%20sekarang' style='background:#25D366; color:white; padding:8px 12px; border-radius:5px; text-decoration:none; display:inline-block; font-weight:bold; margin-top:8px;'>Klik Untuk Hubungi WA Tim Sales</a>"
+    };
+
+    chatOpts.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const intent = this.getAttribute('data-intent');
+            
+            const userMsg = document.createElement('div');
+            userMsg.className = 'jarvis-chat-msg';
+            userMsg.style.background = 'gold';
+            userMsg.style.fontWeight = 'bold';
+            userMsg.innerHTML = 'Anda: ' + this.innerText;
+            chatBody.appendChild(userMsg);
+            
+            chatBody.scrollTop = chatBody.scrollHeight;
+            
+            setTimeout(() => {
+                addJarvisMessage('<strong>AI:</strong> ' + aiResponses[intent]);
+            }, 600);
+        });
+    });
+});
 </script>
 
 </body>
