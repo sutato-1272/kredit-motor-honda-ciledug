@@ -13,6 +13,225 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+	
+	/* =========================================
+   JARVIS V11 - CSS ISOLATION (GOLD THEME)
+   ========================================= */
+.jarvis-widget-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 999999;
+}
+
+/* Trigger Button & Tooltip Wrapper */
+.jarvis-trigger-wrapper {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 999999;
+}
+
+/* Tooltip Pancingan Klik */
+.jarvis-ai-tooltip {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    animation: jarvis-bounce 2s infinite;
+    cursor: pointer;
+}
+.jarvis-ai-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #222222;
+}
+
+/* Tombol Trigger Utama */
+.jarvis-trigger-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid #D4AF37; /* Warna Tema Utama Emas */
+    cursor: pointer;
+    position: relative;
+    animation: jarvis-pulse-gold 2s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.jarvis-ai-logo {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Chat Box Area */
+.jarvis-chat-box {
+    position: fixed;
+    bottom: 110px;
+    right: 25px;
+    width: 350px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999999;
+    border: 1px solid #eeeeee;
+}
+.jarvis-chat-box.jarvis-active {
+    display: flex;
+}
+
+.jarvis-chat-header {
+    background: #D4AF37;
+    color: #ffffff;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.jarvis-close-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.jarvis-chat-body {
+    padding: 15px;
+    height: 350px;
+    overflow-y: auto;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Pesan Chat */
+.jarvis-msg {
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    max-width: 85%;
+}
+.jarvis-msg-ai {
+    background: #f1f1f1;
+    color: #333333;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+.jarvis-msg-user {
+    background: #D4AF37;
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+/* FAQ Quick Actions */
+.jarvis-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+.jarvis-faq-item {
+    background: #ffffff;
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+.jarvis-faq-item:hover {
+    background: #D4AF37;
+    color: #ffffff;
+}
+
+/* Footer Input Area */
+.jarvis-chat-footer {
+    display: flex;
+    padding: 10px;
+    background: #ffffff;
+    border-top: 1px solid #eeeeee;
+    align-items: center;
+    gap: 8px;
+}
+.jarvis-input {
+    flex: 1;
+    border: 1px solid #dddddd;
+    padding: 10px 15px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 13px;
+}
+.jarvis-send-btn {
+    background: #D4AF37;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.jarvis-voice-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #D4AF37;
+}
+
+/* Animasi */
+@keyframes jarvis-pulse-gold {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+@keyframes jarvis-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .jarvis-trigger-wrapper {
+        bottom: 85px;
+        right: 20px;
+    }
+    .jarvis-chat-box {
+        bottom: 165px;
+        right: 10px;
+        left: 10px;
+        width: auto;
+    }
+}
 
     <style>
         /* CSS RESET & MODERN AURA UI PROTOCOL (OPTIMAL FOR MOBILE ACCESSIBILITY) */
@@ -413,6 +632,171 @@
         });
     });
 </script>
+<!-- =========================================
+     JARVIS V11 - VISUAL AI & AUDIBLE FAQ
+     ========================================= -->
+<div class="jarvis-widget-container">
+    
+    <!-- Area ChatBox AI -->
+    <div id="jarvis-ai-window" class="jarvis-chat-box">
+        <div class="jarvis-chat-header">
+            <span>Admin Kredit Motor Honda</span>
+            <button class="jarvis-close-btn" onclick="toggleJarvisAI()">&times;</button>
+        </div>
+        
+        <div class="jarvis-chat-body" id="jarvis-chat-content">
+            <div class="jarvis-msg jarvis-msg-ai">
+                Halo! Saya Asisten AI dari <strong>Kredit Motor Honda Ciledug</strong>, Layanan Pengajuan Kredit & Diler Resmi Motor Honda. Ada yang bisa saya bantu hari ini? 
+            </div>
+            
+            <!-- 5 Pasang FAQ Spesifik Berbasis Data -->
+            <div class="jarvis-faq-list" id="jarvis-faq-container">
+                <button class="jarvis-faq-item" onclick="triggerJarvisFAQ('Bagaimana cara dapat promo DP murah tanpa harus ke showroom?')">1. Cara dapat Promo DP Murah tanpa ke showroom?</button>
+                <button class="jarvis-faq-item" onclick="triggerJarvisFAQ('Apa syarat pengajuan online untuk area Puri Beta, Mencong, dan Budi Luhur?')">2. Syarat KTP Jabodetabek & Area Ciledug?</button>
+                <button class="jarvis-faq-item" onclick="triggerJarvisFAQ('Apakah bisa data dibantu sampai deal lewat WhatsApp saja?')">3. Proses 100% via WhatsApp, apakah bisa?</button>
+                <button class="jarvis-faq-item" onclick="triggerJarvisFAQ('Apakah ada potongan tenor cicilan untuk pengajuan ACC cepat?')">4. Info Potongan Tenor & Pengajuan ACC Cepat?</button>
+                <button class="jarvis-faq-item" onclick="triggerJarvisFAQ('Dimana diler resmi terdekat dari Cipulir, Petukangan, dan Kebayoran Lama?')">5. Lokasi Diler Resmi Terdekat?</button>
+            </div>
+        </div>
 
+        <div class="jarvis-chat-footer">
+            <input type="text" id="jarvis-user-input" class="jarvis-input" placeholder="Ketik atau pakai suara..." onkeypress="handleJarvisEnter(event)">
+            <button class="jarvis-voice-btn" onclick="startJarvisVoice()" title="Gunakan Suara">🎤</button>
+            <button class="jarvis-send-btn" onclick="sendJarvisMessage()">Kirim</button>
+        </div>
+    </div>
+
+    <!-- Trigger Button & Tooltip -->
+    <div class="jarvis-trigger-wrapper">
+        <span class="jarvis-ai-tooltip" onclick="toggleJarvisAI()">Tanya AI</span>
+        <div class="jarvis-trigger-btn" onclick="toggleJarvisAI()">
+            <img src="https://dongkrakusaha.com/gambarbebas/1142820260706-043041_logo AI + Tanya Ai.jpg" alt="Tanya AI Asisten" class="jarvis-ai-logo">
+        </div>
+    </div>
+</div>
+/* =========================================
+   JARVIS V11 - AI BRAIN & VOICE ENGINE
+   ========================================= */
+const jarvisWaNumber = "6285283212205";
+const jarvisWaLink = `https://wa.me/${jarvisWaNumber}?text=Halo%20Admin%20Kredit%20Motor%20Honda%20Ciledug,%20saya%20ingin%20tanya%20promo%20DP%20Murah.`;
+
+function toggleJarvisAI() {
+    const chatBox = document.getElementById('jarvis-ai-window');
+    chatBox.classList.toggle('jarvis-active');
+}
+
+// Mesin Text-to-Speech (Audible FAQ)
+function jarvisSpeak(text) {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        let utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'id-ID';
+        utterance.rate = 0.88; // Setelan Titik Dengar Nyaman
+        utterance.pitch = 0.82; // Setelan Suara Wibawa
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
+// Append Chat ke Layar
+function addJarvisMessage(text, sender) {
+    const chatContent = document.getElementById('jarvis-chat-content');
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `jarvis-msg ${sender === 'ai' ? 'jarvis-msg-ai' : 'jarvis-msg-user'}`;
+    msgDiv.innerHTML = text;
+    chatContent.appendChild(msgDiv);
+    chatContent.scrollTop = chatContent.scrollHeight;
+}
+
+function triggerJarvisFAQ(question) {
+    document.getElementById('jarvis-faq-container').style.display = 'none';
+    addJarvisMessage(question, 'user');
+    processJarvisBrain(question.toLowerCase());
+}
+
+function sendJarvisMessage() {
+    const inputField = document.getElementById('jarvis-user-input');
+    const userText = inputField.value.trim();
+    if (userText === "") return;
+    
+    document.getElementById('jarvis-faq-container').style.display = 'none';
+    addJarvisMessage(userText, 'user');
+    inputField.value = '';
+    processJarvisBrain(userText.toLowerCase());
+}
+
+function handleJarvisEnter(e) {
+    if (e.key === 'Enter') sendJarvisMessage();
+}
+
+// Otak Logika (Intent-Based Routing)
+function processJarvisBrain(input) {
+    let responseText = "";
+    let speechText = "";
+
+    if (input.includes("harga") || input.includes("dp") || input.includes("promo") || input.includes("brosur") || input.includes("tenor")) {
+        // Intent 1: Harga & Promo
+        speechText = "Bulan ini kami punya promo DP super murah dan potongan tenor cicilan khusus pengajuan online. Kuota terbatas! Silakan amankan promo Anda sekarang lewat WhatsApp.";
+        responseText = `${speechText} <br><br>👉 <a href="${jarvisWaLink}" target="_blank" style="color:#D4AF37; font-weight:bold;">Klik di sini untuk klaim Promo DP Murah via WA</a>`;
+        
+    } else if (input.includes("lokasi") || input.includes("diler") || input.includes("showroom") || input.includes("terdekat") || input.includes("dimana")) {
+        // Intent 2: Lokasi
+        speechText = "Diler resmi kami menjangkau seluruh area Ciledug Raya, mulai dari Puri Beta, Mencong, Budi Luhur, Kreo, Cipulir, hingga Kebayoran Lama. Tapi Anda tidak perlu repot kepanasan ke showroom, cukup rebahan di rumah, proses kami 100 persen online!";
+        responseText = `${speechText} <br><br>👉 <a href="${jarvisWaLink}" target="_blank" style="color:#D4AF37; font-weight:bold;">Klik untuk proses santai via WhatsApp</a>`;
+        
+    } else if (input.includes("waktu") || input.includes("buka") || input.includes("jam")) {
+        // Intent 3: Waktu Operasional
+        speechText = "Sistem pengajuan online kami stand by 24 jam. Jangan tunggu besok, amankan motor impian Anda sekarang sebelum antrean kredit memanjang. Data akan langsung kami proses!";
+        responseText = `${speechText} <br><br>👉 <a href="${jarvisWaLink}" target="_blank" style="color:#D4AF37; font-weight:bold;">Klik WA untuk chat dengan admin kami 24/7</a>`;
+        
+    } else if (input.includes("syarat") || input.includes("ktp") || input.includes("cara") || input.includes("ribet") || input.includes("data")) {
+        // Intent 4: Kualitas & Metode (Syarat)
+        speechText = "Cara kredit di kami sangat mudah dan tanpa ribet. Cukup kirim foto KTP Jabodetabek dan KK asli via WhatsApp. Data Anda akan kami bantu maksimalkan sampai deal dan pengajuan ACC cepat keluar.";
+        responseText = `${speechText} <br><br>👉 <a href="${jarvisWaLink}" target="_blank" style="color:#D4AF37; font-weight:bold;">Kirim foto KTP Anda ke WhatsApp kami di sini</a>`;
+        
+    } else if (input.includes("pesan") || input.includes("order") || input.includes("beli") || input.includes("mau")) {
+        // Intent 5: Order / Pesan
+        speechText = "Keputusan cerdas! Mari wujudkan motor incaran parkir di garasi Anda hari ini. Hubungi admin kami sekarang untuk prioritas pengajuan.";
+        responseText = `${speechText} <br><br>👉 <a href="${jarvisWaLink}" target="_blank" style="color:#D4AF37; font-weight:bold;">Hubungi Admin Kami di WhatsApp (0852-8321-2205)</a>`;
+        
+    } else {
+        // Fallback Intent
+        speechText = "Layanan pengajuan kredit motor Honda kami menjamin proses tanpa ribet, tanpa ke showroom, dan data dibantu sampai deal. Ada yang ingin ditanyakan lebih lanjut langsung ke konsultan kami?";
+        responseText = `${speechText} <br><br>👉 <a href="${jarvisWaLink}" target="_blank" style="color:#D4AF37; font-weight:bold;">Tanya Konsultan via WhatsApp</a>`;
+    }
+
+    // Delay natural seolah AI sedang mengetik
+    setTimeout(() => {
+        addJarvisMessage(responseText, 'ai');
+        jarvisSpeak(speechText); // Aktifkan Voice
+    }, 600);
+}
+
+// Voice Recognition (Speech-to-Text)
+function startJarvisVoice() {
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        alert("Maaf, browser Anda tidak mendukung fitur input suara.");
+        return;
+    }
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'id-ID';
+    
+    recognition.onstart = function() {
+        document.getElementById('jarvis-user-input').placeholder = "Mendengarkan suara Anda...";
+    };
+    
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById('jarvis-user-input').value = transcript;
+        sendJarvisMessage();
+        document.getElementById('jarvis-user-input').placeholder = "Ketik atau pakai suara...";
+    };
+    
+    recognition.onerror = function() {
+        document.getElementById('jarvis-user-input').placeholder = "Gagal mendengar. Coba ketik saja.";
+    };
+    
+    recognition.start();
+}
 </body>
 </html>
